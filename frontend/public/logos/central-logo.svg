@@ -1,0 +1,8 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="40" fill="#7c3aed"/>
+  <text x="40" y="20" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">COLEGIO</text>
+  <text x="40" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">CENTRAL</text>
+  <text x="40" y="50" font-family="Arial, sans-serif" font-size="7" fill="white" text-anchor="middle">SECUNDARIA</text>
+  <path d="M15 65 L25 50 L35 55 L45 50 L55 55 L65 50 L65 70 L15 70 Z" fill="white" opacity="0.8"/>
+  <circle cx="40" cy="40" r="15" fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+</svg>

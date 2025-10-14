@@ -1,0 +1,9 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="40" fill="#059669"/>
+  <text x="40" y="18" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">INSTITUTO</text>
+  <text x="40" y="30" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">TÉCNICO</text>
+  <text x="40" y="42" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">DEL NORTE</text>
+  <text x="40" y="55" font-family="Arial, sans-serif" font-size="6" fill="white" text-anchor="middle">ITN</text>
+  <rect x="25" y="58" width="30" height="12" fill="white" opacity="0.8" rx="2"/>
+  <path d="M30 65 L35 62 L40 65 L45 62 L50 65" stroke="#059669" stroke-width="2" fill="none"/>
+</svg>
