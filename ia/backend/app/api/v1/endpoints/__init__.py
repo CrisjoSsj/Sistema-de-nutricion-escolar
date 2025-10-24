@@ -1,1 +1,0 @@
-# Archivo __init__.py para hacer que endpoints sea un paquete Python
