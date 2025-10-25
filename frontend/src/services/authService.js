@@ -18,10 +18,19 @@ export const authService = {
     return response.data;
   },
 
-  // Logout (limpiar token localmente)
-  logout: () => {
-    localStorage.removeItem('auth_token');
-    localStorage.removeItem('user_data');
+  // Logout (limpiar token localmente y notificar al servidor)
+  logout: async () => {
+    try {
+      // Intentar notificar al servidor (opcional, no crítico si falla)
+      await api.post(ENDPOINTS.LOGOUT || '/logout');
+    } catch (error) {
+      // No es crítico si el servidor no responde
+      console.log('Logout del servidor no disponible, continuando con logout local');
+    } finally {
+      // Siempre limpiar datos locales
+      localStorage.removeItem('auth_token');
+      localStorage.removeItem('user_data');
+    }
     return Promise.resolve({ success: true });
   },
 

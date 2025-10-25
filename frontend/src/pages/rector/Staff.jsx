@@ -192,7 +192,7 @@ export default function RectorStaff() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">
           👥 Gestión de Personal

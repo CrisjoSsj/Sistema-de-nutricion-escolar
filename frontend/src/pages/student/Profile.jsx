@@ -70,7 +70,7 @@ export default function StudentProfile() {
   ];
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">
           {studentProfile.avatar} Mi Perfil

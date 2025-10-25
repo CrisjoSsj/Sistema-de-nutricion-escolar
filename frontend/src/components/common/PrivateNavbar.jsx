@@ -6,7 +6,7 @@ import UserDropdown from './UserDropdown.jsx';
 
 export default function PrivateNavbar() {
   const { user } = useAuth();
-  const { currentSchool } = useSchool();
+  const { schoolInfo, companyInfo, getSchoolLogo, isLoading } = useSchool();
   const location = useLocation();
 
   // Configurar navegación según el rol del usuario
@@ -17,46 +17,41 @@ export default function PrivateNavbar() {
       case 'admin':
         return [
           { path: dashboardPath, label: ' Dashboard', icon: '📊' },
-          { path: '/admin/users', label: ' Gestión de Usuarios', icon: '👥' },
-          { path: '/admin/schools', label: ' Gestión de Escuelas', icon: '🏫' },
-          { path: '/admin/menus', label: ' Supervisar Menús', icon: '🍽️' },
-          { path: '/admin/reports', label: ' Reportes Generales', icon: '📈' },
-          { path: '/admin/settings', label: ' Configuración Sistema', icon: '⚙️' }
+          { path: '/admin/users', label: ' Usuarios', icon: '👥' },
+          { path: '/admin/schools', label: ' Escuelas', icon: '🏫' },
+          { path: '/admin/menus', label: ' Menús', icon: '🍽️' },
+          { path: '/admin/reports', label: ' Reportes', icon: '📈' }
         ];
       case 'nutricionista':
         return [
           { path: dashboardPath, label: ' Dashboard', icon: '📊' },
-          { path: '/nutritionist/menus', label: ' Crear Menús', icon: '🍽️' },
-          { path: '/nutritionist/foods', label: ' Base de Alimentos', icon: '🥗' },
-          { path: '/nutritionist/nutrition', label: ' Análisis Nutricional', icon: '📊' },
-          { path: '/nutritionist/feedback', label: ' Feedback Recibido', icon: '💬' },
-          { path: '/nutritionist/reports', label: ' Mis Reportes', icon: '' }
+          { path: '/nutritionist/menus', label: ' Menús', icon: '🍽️' },
+          { path: '/nutritionist/foods', label: ' Alimentos', icon: '🥗' },
+          { path: '/nutritionist/nutrition', label: ' Análisis', icon: '📊' },
+          { path: '/nutritionist/feedback', label: ' Feedback', icon: '💬' }
         ];
       case 'padre':
         return [
           { path: dashboardPath, label: ' Dashboard', icon: '📊' },
-          { path: '/parent/menus', label: ' Menús Semanales', icon: '📋' },
-          { path: '/parent/nutrition', label: ' Seguimiento Nutricional', icon: '🍎' },
-          { path: '/parent/feedback', label: ' Enviar Comentarios', icon: '💬' },
-          { path: '/parent/notifications', label: ' Notificaciones', icon: '🔔' }
+          { path: '/parent/menus', label: ' Menús', icon: '📋' },
+          { path: '/parent/nutrition', label: ' Nutrición', icon: '🍎' },
+          { path: '/parent/feedback', label: ' Comentarios', icon: '💬' }
         ];
       case 'estudiante':
         return [
-          { path: dashboardPath, label: ' Mi Dashboard', icon: '📊' },
-          { path: '/student/menus', label: ' Menús de Hoy', icon: '🍽️' },
-          { path: '/student/favorites', label: ' Mis Favoritos', icon: '⭐' },
-          { path: '/student/nutrition', label: ' Mi Nutrición', icon: '📊' },
-          { path: '/student/feedback', label: ' Calificar Comida', icon: '💬' },
-          { path: '/student/profile', label: ' Mi Perfil', icon: '👤' }
+          { path: dashboardPath, label: ' Dashboard', icon: '📊' },
+          { path: '/student/menus', label: ' Menús', icon: '🍽️' },
+          { path: '/student/favorites', label: ' Favoritos', icon: '⭐' },
+          { path: '/student/nutrition', label: ' Nutrición', icon: '📊' },
+          { path: '/student/feedback', label: ' Calificar', icon: '💬' }
         ];
       case 'rector':
         return [
           { path: dashboardPath, label: ' Dashboard', icon: '📊' },
-          { path: '/rector/school-profile', label: ' Perfil de Escuela', icon: '🏫' },
-          { path: '/rector/students', label: ' Gestión Estudiantes', icon: '👨‍🎓' },
-          { path: '/rector/parents', label: ' Gestión Apoderados', icon: '👨‍👩‍👧‍👦' },
-          { path: '/rector/staff', label: ' Gestión Personal', icon: '👥' },
-          { path: '/rector/reports', label: ' Reportes Institucionales', icon: '📈' }
+          { path: '/rector/school-profile', label: ' Perfil', icon: '🏫' },
+          { path: '/rector/students', label: ' Estudiantes', icon: '👨‍🎓' },
+          { path: '/rector/parents', label: ' Apoderados', icon: '👨‍👩‍👧‍👦' },
+          { path: '/rector/reports', label: ' Reportes', icon: '📈' }
         ];
       default:
         return [
@@ -76,22 +71,45 @@ export default function PrivateNavbar() {
     }
   };
 
-
-
   const navItems = getNavItems();
+
+  // Determinar qué información mostrar en el navbar
+  const getNavbarInfo = () => {
+    if (isLoading) {
+      return { name: 'Cargando...', logo: null };
+    }
+    
+    // Para administradores, mostrar información corporativa
+    if (user?.rol === 'admin') {
+      return {
+        name: companyInfo?.name || 'NutriEscolar Corp',
+        logo: null,
+        isCompany: true
+      };
+    }
+    
+    // Para otros usuarios, mostrar información de la escuela
+    return {
+      name: schoolInfo?.name || 'Cargando escuela...',
+      logo: schoolInfo?.logo,
+      isCompany: false
+    };
+  };
+
+  const navbarInfo = getNavbarInfo();
 
   return (
     <nav className="private-navbar">
       <div className="navbar-container">
-        {/* Logo y nombre de la escuela */}
+        {/* Logo y nombre de la escuela/empresa */}
         <div className="navbar-brand">
-          <Link to="/" className="brand-link">
+          <div className="brand-link">
             <div className="school-brand-section">
               <div className="school-logo">
-                {currentSchool?.logo ? (
+                {navbarInfo.logo && !navbarInfo.isCompany ? (
                   <img 
-                    src={currentSchool.logo} 
-                    alt={`Logo ${currentSchool.name}`}
+                    src={getSchoolLogo()} 
+                    alt={`Logo ${navbarInfo.name}`}
                     className="school-logo-img"
                     onError={(e) => {
                       e.target.style.display = 'none';
@@ -99,15 +117,15 @@ export default function PrivateNavbar() {
                     }}
                   />
                 ) : null}
-                <div className="school-logo-fallback" style={{display: currentSchool?.logo ? 'none' : 'flex'}}>
-                  🏫
+                <div className="school-logo-fallback" style={{display: navbarInfo.logo && !navbarInfo.isCompany ? 'none' : 'flex'}}>
+                  {navbarInfo.isCompany ? '🏢' : '🏫'}
                 </div>
               </div>
               <div className="school-info">
-                <span className="school-title">{currentSchool?.name || 'Cargando escuela...'}</span>
+                <span className="school-title">{navbarInfo.name}</span>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
 
         {/* Enlaces de navegación */}

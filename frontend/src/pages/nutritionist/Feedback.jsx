@@ -138,7 +138,7 @@ export default function NutritionistFeedback() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Feedback Recibido</h1>
         <p className="page-description">Revisa y responde a los comentarios sobre tus menús</p>

@@ -110,7 +110,7 @@ export default function ParentFeedback() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Enviar Comentarios</h1>
         <p className="page-description">Comparte tu opinión sobre los menús y servicios</p>

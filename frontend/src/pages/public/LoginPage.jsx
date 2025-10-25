@@ -160,19 +160,19 @@ export default function LoginPage() {
           </p>
           <div style={{ marginTop: 'var(--spacing-2)' }}>
             <div className="text-xs text-gray-500">
-              <strong>Admin:</strong> juan.perez@example.com / password123
+              <strong>Admin:</strong> admin@sistema.cl / admin123
             </div>
             <div className="text-xs text-gray-500">
-              <strong>Nutricionista:</strong> maria.gomez@example.com / password456
+              <strong>Nutricionista:</strong> nutricionista1@sistema.cl / nutri123
             </div>
             <div className="text-xs text-gray-500">
-              <strong>Rector:</strong> roberto.mendoza@example.com / password555
+              <strong>Rector:</strong> rector1@sistema.cl / rector123
             </div>
             <div className="text-xs text-gray-500">
-              <strong>Padre:</strong> luis.rodriguez@example.com / password789
+              <strong>Padre:</strong> juan.perez@email.com / padre123
             </div>
             <div className="text-xs text-gray-500">
-              <strong>Estudiante:</strong> ana.martinez@example.com / password000
+              <strong>Estudiante:</strong> ana.martinez@email.com / estudiante123
             </div>
           </div>
         </div>

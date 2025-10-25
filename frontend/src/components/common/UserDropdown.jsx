@@ -23,17 +23,27 @@ export default function UserDropdown() {
   }, []);
 
   const handleLogout = async () => {
+    setIsOpen(false);
+    
     const confirmLogout = window.confirm('¿Estás seguro de que deseas cerrar sesión?');
     if (confirmLogout) {
       try {
+        // Mostrar indicador de carga si es necesario
+        console.log('Cerrando sesión...');
+        
+        // Ejecutar logout del contexto
         await logout();
-        navigate('/login');
+        
+        // Redirigir al login
+        navigate('/login', { replace: true });
+        
+        console.log('Sesión cerrada exitosamente');
       } catch (error) {
         console.error('Error al cerrar sesión:', error);
-        navigate('/login');
+        // Incluso si hay error, limpiar y redirigir
+        navigate('/login', { replace: true });
       }
     }
-    setIsOpen(false);
   };
 
   const getRoleIcon = (rol) => {
@@ -66,6 +76,17 @@ export default function UserDropdown() {
       case 'padre': return '/parent/profile';
       case 'estudiante': return '/student/profile';
       default: return '/profile';
+    }
+  };
+
+  const getSettingsPath = () => {
+    switch (user?.rol) {
+      case 'admin': return '/admin/settings';
+      case 'nutricionista': return '/nutritionist/settings';
+      case 'rector': return '/rector/settings';
+      case 'padre': return '/parent/settings';
+      case 'estudiante': return '/student/settings';
+      default: return '/settings';
     }
   };
 
@@ -108,7 +129,7 @@ export default function UserDropdown() {
             <button 
               className="dropdown-item"
               onClick={() => {
-                navigate(getProfilePath());
+                alert('Función de perfil en desarrollo. Próximamente disponible.');
                 setIsOpen(false);
               }}
             >
@@ -119,7 +140,7 @@ export default function UserDropdown() {
             <button 
               className="dropdown-item"
               onClick={() => {
-                navigate('/settings');
+                alert('Función de configuración en desarrollo. Próximamente disponible.');
                 setIsOpen(false);
               }}
             >

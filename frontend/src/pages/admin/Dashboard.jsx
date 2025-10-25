@@ -1,9 +1,24 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 
 export default function AdminDashboard() {
+  // Manejadores para botones de acciones rápidas
+  const handleAddUser = () => {
+    alert('Función "Agregar Usuario" en desarrollo. Próximamente disponible.');
+  };
+
+  const handleRegisterSchool = () => {
+    alert('Función "Registrar Escuela" en desarrollo. Próximamente disponible.');
+  };
+
+  const handleGenerateReport = () => {
+    alert('Función "Generar Reporte" en desarrollo. Próximamente disponible.');
+  };
+
   return (
-    <DashboardLayout title="Panel de Administración">
-      <h2 className="admin-title">Panel de Administración</h2>
+    <DashboardLayout title="Panel de Administración" showSchoolHeader={false}>
+      <div className="page-header">
+        <h1 className="page-title">Panel de Administración</h1>
+      </div>
 
       {/* Estadísticas principales */}
       <div className="stats-grid">
@@ -12,7 +27,6 @@ export default function AdminDashboard() {
             <div className="stat-icon usuarios">
               👥
             </div>
-            <h3 className="stat-title">Usuarios</h3>
           </div>
           <div className="stat-content">
             <div className="stat-number">1,247</div>
@@ -25,7 +39,6 @@ export default function AdminDashboard() {
             <div className="stat-icon escuelas">
               🏫
             </div>
-            <h3 className="stat-title">Escuelas</h3>
           </div>
           <div className="stat-content">
             <div className="stat-number">15</div>
@@ -38,7 +51,6 @@ export default function AdminDashboard() {
             <div className="stat-icon reportes">
               📊
             </div>
-            <h3 className="stat-title">Reportes</h3>
           </div>
           <div className="stat-content">
             <div className="stat-number">342</div>
@@ -52,13 +64,13 @@ export default function AdminDashboard() {
         <div className="action-card">
           <h3 className="action-title">Acciones Rápidas</h3>
           <div className="action-buttons">
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" onClick={handleAddUser}>
               ➕ Agregar Usuario
             </button>
-            <button className="btn btn-secondary">
+            <button className="btn btn-secondary" onClick={handleRegisterSchool}>
               🏫 Registrar Escuela
             </button>
-            <button className="btn btn-outline">
+            <button className="btn btn-outline" onClick={handleGenerateReport}>
               📊 Generar Reporte
             </button>
           </div>

@@ -44,7 +44,7 @@ export default function Reports() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Reportes y Análisis</h1>
         <p className="page-description">Analiza el rendimiento y estadísticas del sistema nutricional</p>
@@ -168,17 +168,9 @@ export default function Reports() {
                     <td>{school.students}</td>
                     <td>{school.served}</td>
                     <td>
-                      <div className="percentage-cell">
-                        <span className={`percentage ${school.percentage >= 90 ? 'good' : 'warning'}`}>
-                          {school.percentage}%
-                        </span>
-                        <div className="progress-bar">
-                          <div 
-                            className="progress-fill"
-                            style={{ width: `${school.percentage}%` }}
-                          ></div>
-                        </div>
-                      </div>
+                      <span className={`percentage ${school.percentage >= 90 ? 'good' : 'warning'}`}>
+                        {school.percentage}%
+                      </span>
                     </td>
                     <td>
                       <span className="trend-indicator positive">📈 +2.3%</span>

@@ -168,7 +168,7 @@ export default function StudentMenus() {
   ];
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">
           {studentInfo.avatar} ¡Hola {studentInfo.name.split(' ')[0]}!

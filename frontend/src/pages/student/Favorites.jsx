@@ -142,7 +142,7 @@ export default function StudentFavorites() {
   const stats = getTotalStats();
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">
           {studentInfo.avatar} Mis Comidas Favoritas

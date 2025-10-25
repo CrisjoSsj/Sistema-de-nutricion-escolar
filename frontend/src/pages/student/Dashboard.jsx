@@ -1,6 +1,19 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 
 export default function StudentDashboard() {
+  // Manejadores para botones de acciones rápidas
+  const handleViewWeeklyMenus = () => {
+    alert('Función "Ver Menús de la Semana" en desarrollo. Próximamente disponible.');
+  };
+
+  const handleFoodInfo = () => {
+    alert('Función "Información de Alimentos" en desarrollo. Próximamente disponible.');
+  };
+
+  const handleCommentMenu = () => {
+    alert('Función "Comentar sobre el Menú" en desarrollo. Próximamente disponible.');
+  };
+
   const getMenuTypeIcon = (tipo) => {
     switch (tipo) {
       case 'desayuno': return '🌅';
@@ -187,13 +200,13 @@ export default function StudentDashboard() {
       <div className="actions-card">
         <h3 className="actions-title">🚀 Acciones Rápidas</h3>
         <div className="actions-buttons">
-          <button className="btn btn-primary">
+          <button className="btn btn-primary" onClick={handleViewWeeklyMenus}>
             📅 Ver Menús de la Semana
           </button>
-          <button className="btn btn-secondary">
+          <button className="btn btn-secondary" onClick={handleFoodInfo}>
             🥗 Información de Alimentos
           </button>
-          <button className="btn btn-outline">
+          <button className="btn btn-outline" onClick={handleCommentMenu}>
             💬 Comentar sobre el Menú
           </button>
         </div>

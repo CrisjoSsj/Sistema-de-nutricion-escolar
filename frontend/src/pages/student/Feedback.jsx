@@ -162,7 +162,7 @@ export default function StudentFeedback() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">
           {studentInfo.avatar} Califica tus comidas

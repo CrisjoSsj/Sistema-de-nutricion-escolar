@@ -12,7 +12,7 @@ import './styles/enhanced-utilities.css';
 import './styles/enhanced-forms.css';
 
 // Páginas principales
-import HomePage from './pages/public/home.jsx';
+import HomePagePublic from './pages/public/home.jsx';
 import LoginPage from './pages/public/LoginPage.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
 
@@ -54,23 +54,60 @@ import RectorStaff from './pages/rector/Staff.jsx';
 import RectorReports from './pages/rector/Reports.jsx';
 
 // Página de prueba
-import TestPage from './pages/TestPage.jsx';
 import EnhancedPageExample from './components/examples/EnhancedPageExample.jsx';
 import ModernUIShowcase from './components/ModernUIShowcase.jsx';
 
-// Componente para rutas protegidas
-const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated, isLoading } = useAuth();
+// Componente para la página de inicio (redirección inteligente)
+const HomePage = () => {
+  const { isAuthenticated, user, isLoading } = useAuth();
 
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="spinner-lg"></div>
+        <p className="ml-2">Cargando...</p>
       </div>
     );
   }
 
-  return isAuthenticated ? children : <Navigate to="/login" replace />;
+  // Si el usuario está autenticado, redirigir a su dashboard
+  if (isAuthenticated && user) {
+    const dashboardPath = getDashboardPathForUser(user.rol);
+    return <Navigate to={dashboardPath} replace />;
+  }
+
+  // Si no está autenticado, mostrar página pública
+  return <HomePagePublic />;
+};
+
+// Función auxiliar para obtener la ruta del dashboard según el rol
+const getDashboardPathForUser = (rol) => {
+  switch (rol) {
+    case 'admin': return '/admin';
+    case 'nutricionista': return '/nutritionist';
+    case 'padre': return '/parent';
+    case 'estudiante': return '/student';
+    case 'rector': return '/rector';
+    default: return '/dashboard';
+  }
+};
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated, isLoading, user } = useAuth();
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="spinner-lg"></div>
+        <p className="ml-2">Verificando autenticación...</p>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated || !user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
 };
 
 function App() {
@@ -80,7 +117,6 @@ function App() {
           {/* Rutas públicas */}
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/test" element={<TestPage />} />
           <Route path="/example" element={<EnhancedPageExample />} />
           <Route path="/showcase" element={<ModernUIShowcase />} />
           
@@ -339,11 +375,25 @@ function App() {
           />
           
           {/* Ruta por defecto */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
   );
 }
+
+// Componente para manejar rutas no encontradas
+const NotFoundPage = () => {
+  const { isAuthenticated, user } = useAuth();
+
+  // Si el usuario está autenticado, redirigir a su dashboard
+  if (isAuthenticated && user) {
+    const dashboardPath = getDashboardPathForUser(user.rol);
+    return <Navigate to={dashboardPath} replace />;
+  }
+
+  // Si no está autenticado, redirigir al home
+  return <Navigate to="/" replace />;
+};
 
 // Componente principal con providers anidados
 function AppWithProviders() {

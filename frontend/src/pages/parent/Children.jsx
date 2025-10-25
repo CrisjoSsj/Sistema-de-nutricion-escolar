@@ -134,7 +134,7 @@ export default function ParentChildren() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Mis Hijos</h1>
         <p className="page-description">Gestiona la información y seguimiento de tus hijos</p>

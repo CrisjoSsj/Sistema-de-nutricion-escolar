@@ -70,7 +70,7 @@ export default function Schools() {
   const totalStudents = schools.reduce((sum, school) => sum + school.students, 0);
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Gestión de Escuelas</h1>
         <p className="page-description">Administra las instituciones educativas del sistema</p>

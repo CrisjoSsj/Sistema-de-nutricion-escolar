@@ -2,6 +2,23 @@ import React, { useState } from 'react';
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 
 export default function ParentDashboard() {
+  // Manejadores para botones de acciones rápidas
+  const handleViewNutrition = () => {
+    alert('Función "Ver Información Nutricional" en desarrollo. Próximamente disponible.');
+  };
+
+  const handleSendMessage = () => {
+    alert('Función "Enviar Mensaje" en desarrollo. Próximamente disponible.');
+  };
+
+  const handleViewReports = () => {
+    alert('Función "Ver Reportes" en desarrollo. Próximamente disponible.');
+  };
+
+  const handleScheduleMeeting = () => {
+    alert('Función "Programar Reunión" en desarrollo. Próximamente disponible.');
+  };
+
   // Datos de ejemplo de hijos (mismo que en Children.jsx)
   const [children] = useState([
     {

@@ -119,7 +119,7 @@ export default function RectorDashboard() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">
           🎓 Panel del Rector - {currentSchool?.name}

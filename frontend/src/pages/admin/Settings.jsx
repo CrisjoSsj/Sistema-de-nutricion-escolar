@@ -61,7 +61,7 @@ export default function Settings() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Configuración del Sistema</h1>
         <p className="page-description">Gestiona la configuración general del sistema de nutrición escolar</p>

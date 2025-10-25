@@ -203,7 +203,7 @@ export default function ParentNotifications() {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">
           Notificaciones 

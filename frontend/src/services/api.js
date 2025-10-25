@@ -29,11 +29,21 @@ api.interceptors.response.use(
     return response;
   },
   (error) => {
+    // Solo manejar errores 401 si no estamos en rutas de autenticación
     if (error.response?.status === 401) {
-      // Token inválido o expirado
+      const currentPath = window.location.pathname;
+      
+      // Si ya estamos en login o en rutas públicas, no hacer nada
+      if (currentPath === '/login' || currentPath === '/register' || currentPath === '/') {
+        return Promise.reject(error);
+      }
+      
+      // Solo limpiar localStorage, dejar que el contexto maneje la redirección
       localStorage.removeItem('auth_token');
       localStorage.removeItem('user_data');
-      window.location.href = '/login';
+      
+      // Emitir evento personalizado para que el contexto lo maneje
+      window.dispatchEvent(new CustomEvent('auth-error', { detail: 'Token expired' }));
     }
     return Promise.reject(error);
   }

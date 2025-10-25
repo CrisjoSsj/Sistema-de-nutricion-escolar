@@ -1,7 +1,7 @@
-/* Variables CSS globales mejoradas */
+/* Variables CSS globales mejoradas - Paleta Educativa */
 :root {
-  /* Paleta de colores moderna y armoniosa */
-  --primary-color: #3b82f6;
+  /* Paleta de colores educativa con alto contraste */
+  --primary-color: #1e40af;
   --primary-50: #eff6ff;
   --primary-100: #dbeafe;
   --primary-200: #bfdbfe;
@@ -12,10 +12,10 @@
   --primary-700: #1d4ed8;
   --primary-800: #1e40af;
   --primary-900: #1e3a8a;
-  --primary-dark: #2563eb;
-  --primary-light: #93c5fd;
+  --primary-dark: #1e3a8a;
+  --primary-light: #60a5fa;
   
-  --secondary-color: #10b981;
+  --secondary-color: #059669;
   --secondary-50: #ecfdf5;
   --secondary-100: #d1fae5;
   --secondary-200: #a7f3d0;
@@ -26,11 +26,11 @@
   --secondary-700: #047857;
   --secondary-800: #065f46;
   --secondary-900: #064e3b;
-  --secondary-dark: #059669;
-  --secondary-light: #6ee7b7;
+  --secondary-dark: #047857;
+  --secondary-light: #34d399;
   
-  /* Colores de estado mejorados */
-  --success-color: #22c55e;
+  /* Colores de estado educativos con alto contraste */
+  --success-color: #059669;
   --success-50: #f0fdf4;
   --success-100: #dcfce7;
   --success-200: #bbf7d0;
@@ -42,7 +42,7 @@
   --success-800: #166534;
   --success-900: #14532d;
   
-  --warning-color: #f59e0b;
+  --warning-color: #d97706;
   --warning-50: #fffbeb;
   --warning-100: #fef3c7;
   --warning-200: #fde68a;
@@ -54,7 +54,7 @@
   --warning-800: #92400e;
   --warning-900: #78350f;
   
-  --error-color: #ef4444;
+  --error-color: #dc2626;
   --error-50: #fef2f2;
   --error-100: #fee2e2;
   --error-200: #fecaca;
@@ -66,16 +66,16 @@
   --error-800: #991b1b;
   --error-900: #7f1d1d;
   
-  --info-color: #06b6d4;
-  --info-50: #f0fdff;
-  --info-100: #ccfbf1;
-  --info-200: #99f6e4;
-  --info-300: #5eead4;
-  --info-400: #2dd4bf;
-  --info-500: #14b8a6;
-  --info-600: #0d9488;
-  --info-700: #0f766e;
-  --info-800: #115e59;
+  --info-color: #0891b2;
+  --info-50: #ecfeff;
+  --info-100: #cffafe;
+  --info-200: #a5f3fc;
+  --info-300: #67e8f9;
+  --info-400: #22d3ee;
+  --info-500: #06b6d4;
+  --info-600: #0891b2;
+  --info-700: #0e7490;
+  --info-800: #155e75;
   --info-900: #134e4a;
   
   /* Colores neutros */
@@ -101,17 +101,17 @@
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
   
-  /* Espaciado */
+  /* Espaciado compacto */
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
-  --spacing-3: 0.75rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.25rem;
-  --spacing-6: 1.5rem;
-  --spacing-8: 2rem;
-  --spacing-10: 2.5rem;
-  --spacing-12: 3rem;
-  --spacing-16: 4rem;
+  --spacing-3: 0.625rem;
+  --spacing-4: 0.75rem;
+  --spacing-5: 1rem;
+  --spacing-6: 1.25rem;
+  --spacing-8: 1.5rem;
+  --spacing-10: 2rem;
+  --spacing-12: 2.5rem;
+  --spacing-16: 3rem;
   
   /* Bordes */
   --border-radius-sm: 0.25rem;
@@ -184,10 +184,10 @@ html {
 
 body {
   font-family: var(--font-family);
-  color: var(--gray-900);
-  background: linear-gradient(135deg, #fafafa 0%, #f0f9ff 100%);
+  color: #1f2937;
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 50%, #fef3c7 100%);
   background-attachment: fixed;
-  line-height: 1.7;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -203,7 +203,7 @@ body {
   position: relative;
 }
 
-/* Patrón de fondo sutil */
+/* Patrón de fondo educativo sutil */
 body::before {
   content: '';
   position: fixed;
@@ -212,8 +212,9 @@ body::before {
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(30, 64, 175, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.05) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
 }
@@ -237,15 +238,15 @@ body::before {
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
-/* Utilidades de color */
-.text-gray-500 { color: var(--gray-500); }
-.text-gray-600 { color: var(--gray-600); }
-.text-gray-700 { color: var(--gray-700); }
-.text-gray-900 { color: var(--gray-900); }
-.text-primary { color: var(--primary-color); }
-.text-success { color: var(--success-color); }
-.text-warning { color: var(--warning-color); }
-.text-error { color: var(--error-color); }
+/* Utilidades de color con alto contraste */
+.text-gray-500 { color: #6b7280; }
+.text-gray-600 { color: #4b5563; }
+.text-gray-700 { color: #374151; }
+.text-gray-900 { color: #111827; }
+.text-primary { color: #1e40af; }
+.text-success { color: #059669; }
+.text-warning { color: #d97706; }
+.text-error { color: #dc2626; }
 
 /* Utilidades de espaciado */
 .m-0 { margin: 0; }
@@ -346,15 +347,16 @@ body::before {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+  background: linear-gradient(135deg, #1e40af, #059669);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 700;
 }
 
 .animated-gradient {
-  background: linear-gradient(270deg, var(--primary-500), var(--secondary-500), var(--primary-600));
-  background-size: 400% 400%;
+  background: linear-gradient(270deg, #1e40af, #059669, #d97706);
+  background-size: 600% 600%;
   animation: gradientShift 8s ease infinite;
 }
 
@@ -434,24 +436,24 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--primary-400), var(--secondary-400));
+  background: linear-gradient(135deg, #1e40af, #059669);
   border-radius: var(--border-radius-full);
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
+  background: linear-gradient(135deg, #1e3a8a, #047857);
 }
 
-/* Selección de texto personalizada */
+/* Selección de texto personalizada con contraste */
 ::selection {
-  background: var(--primary-200);
-  color: var(--primary-900);
+  background: #bfdbfe;
+  color: #1e3a8a;
 }
 
 ::-moz-selection {
-  background: var(--primary-200);
-  color: var(--primary-900);
+  background: #bfdbfe;
+  color: #1e3a8a;
 }
 
 /* Layout utilities para footer */

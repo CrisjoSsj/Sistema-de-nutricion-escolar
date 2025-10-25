@@ -123,7 +123,7 @@ export default function ParentNutrition() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Seguimiento Nutricional</h1>
         <p className="page-description">Monitorea el progreso nutricional de tus hijos</p>

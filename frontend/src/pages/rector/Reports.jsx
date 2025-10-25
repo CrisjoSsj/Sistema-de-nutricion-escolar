@@ -145,7 +145,7 @@ export default function RectorReports() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">
           📊 Reportes Institucionales

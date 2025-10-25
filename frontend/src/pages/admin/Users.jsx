@@ -30,7 +30,7 @@ export default function Users() {
   });
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Gestión de Usuarios</h1>
         <p className="page-description">Administra todos los usuarios del sistema de nutrición escolar</p>

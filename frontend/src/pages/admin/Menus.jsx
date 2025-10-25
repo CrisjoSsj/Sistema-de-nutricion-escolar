@@ -92,7 +92,7 @@ export default function Menus() {
   const weekMenus = getWeekMenus();
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Gestión de Menús</h1>
         <p className="page-description">Administra los menús nutricionales de todas las escuelas</p>

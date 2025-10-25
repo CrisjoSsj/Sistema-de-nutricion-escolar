@@ -79,7 +79,7 @@ export default function NutritionistNutrition() {
   const currentData = nutritionData.weekly[selectedMetric];
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Análisis Nutricional</h1>
         <p className="page-description">Monitorea el cumplimiento de los estándares nutricionales en tus menús</p>

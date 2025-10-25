@@ -102,6 +102,18 @@ export const AuthProvider = ({ children }) => {
   // Verificar autenticación al cargar
   useEffect(() => {
     checkAuthStatus();
+    
+    // Escuchar eventos de error de autenticación
+    const handleAuthError = () => {
+      clearSessionData();
+      dispatch({ type: AUTH_ACTIONS.LOGOUT });
+    };
+    
+    window.addEventListener('auth-error', handleAuthError);
+    
+    return () => {
+      window.removeEventListener('auth-error', handleAuthError);
+    };
   }, []);
 
   const checkAuthStatus = async () => {
@@ -110,24 +122,26 @@ export const AuthProvider = ({ children }) => {
 
     if (token && userData) {
       try {
-        // Verificar que el token sigue siendo válido obteniendo el perfil
-        const response = await authService.getProfile();
-        
-        // Normalizar el rol a minúsculas si no lo está
-        const normalizedUserData = {
-          ...response,
-          rol: response.rol ? response.rol.toLowerCase() : response.rol
-        };
-        
+        // Si tenemos token y datos de usuario válidos, establecer el estado directamente
+        // sin hacer una petición al servidor en cada recarga
         dispatch({
           type: AUTH_ACTIONS.LOGIN_SUCCESS,
           payload: {
-            user: normalizedUserData,
+            user: userData,
             token: token
           }
         });
+        
+        // Verificar token en segundo plano (opcional)
+        authService.getProfile().catch(() => {
+          // Si el token ha expirado, limpiar en silencio
+          clearSessionData();
+          dispatch({ type: AUTH_ACTIONS.LOGOUT });
+        });
+        
       } catch (error) {
-        // Token inválido, limpiar datos
+        // Solo limpiar si hay un error crítico
+        console.error('Error verificando autenticación:', error);
         clearSessionData();
         dispatch({ type: AUTH_ACTIONS.LOGOUT });
       }

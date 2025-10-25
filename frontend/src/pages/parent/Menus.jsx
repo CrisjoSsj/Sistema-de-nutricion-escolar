@@ -189,7 +189,7 @@ export default function ParentMenus() {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">Menús Semanales</h1>
         <p className="page-description">Revisa los menús programados para tus hijos</p>

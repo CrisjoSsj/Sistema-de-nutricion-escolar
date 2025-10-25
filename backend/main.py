@@ -1,5 +1,6 @@
-from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi import FastAPI, Depends, HTTPException, status, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 import sys
 import os
@@ -200,10 +201,13 @@ async def get_system_stats(current_user: dict = Depends(get_current_user)):
 
 # Manejo de errores globales
 @app.exception_handler(HTTPException)
-async def http_exception_handler(request, exc):
-    return {
-        "error": True,
-        "status_code": exc.status_code,
-        "message": exc.detail,
-        "path": str(request.url)
-    }
+async def http_exception_handler(request: Request, exc: HTTPException):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={
+            "error": True,
+            "status_code": exc.status_code,
+            "message": exc.detail,
+            "path": str(request.url)
+        }
+    )

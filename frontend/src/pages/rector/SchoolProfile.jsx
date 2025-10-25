@@ -92,7 +92,7 @@ export default function RectorSchoolProfile() {
   ];
 
   return (
-    <DashboardLayout>
+    <DashboardLayout showSchoolHeader={false}>
       <div className="page-header">
         <h1 className="page-title">
           🏫 Perfil de la Escuela

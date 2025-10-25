@@ -2,14 +2,8 @@ fastapi==0.104.1
 uvicorn[standard]==0.24.0
 pydantic==2.5.0
 python-multipart==0.0.6
-
-# Base de datos local (compatible con Python 3.13)
-sqlalchemy==2.0.35
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.3
 python-dotenv==1.0.0
-
-# Seguridad (sin bcrypt que requiere Rust)
-pyjwt==2.8.0
-passlib==1.7.4
-
-# Utilidades
-email-validator==2.1.0
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
