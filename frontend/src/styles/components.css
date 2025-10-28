@@ -286,6 +286,53 @@
   gap: var(--spacing-3);
 }
 
+/* Theme toggle button - bonito y compacto */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: var(--spacing-2);
+}
+
+.theme-toggle .toggle-track {
+  width: 48px;
+  height: 26px;
+  border-radius: 9999px;
+  background: var(--gray-200);
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+  transition: background 220ms ease;
+}
+
+.theme-toggle .toggle-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transform: translateX(0);
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.theme-toggle .toggle-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.95rem;
+  color: var(--gray-600);
+}
+
+.theme-toggle .icon-moon { display: none; }
+.theme-toggle.active .icon-sun { display: none; }
+.theme-toggle.active .icon-moon { display: inline; }
+.theme-toggle.active .toggle-track { background: linear-gradient(135deg, #4b5563, #111827); }
+.theme-toggle.active .toggle-thumb { transform: translateX(22px); background: #111827; }
+
 .user-info {
   display: flex;
   flex-direction: column;

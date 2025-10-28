@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import { SchoolProvider } from './context/SchoolContext.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 
 // Estilos
 import './styles/globals.css';
@@ -396,11 +397,13 @@ const NotFoundPage = () => {
 // Componente principal con providers anidados
 function AppWithProviders() {
   return (
-    <AuthProvider>
-      <SchoolProvider>
-        <App />
-      </SchoolProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <SchoolProvider>
+          <App />
+        </SchoolProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

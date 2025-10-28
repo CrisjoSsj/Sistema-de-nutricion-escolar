@@ -3,6 +3,7 @@ import { useAuth } from '../../context/AuthContext.jsx';
 import { useSchool } from '../../context/SchoolContext.jsx';
 import { useNavigate } from 'react-router-dom';
 import UserDropdown from './UserDropdown.jsx';
+import ThemeToggle from './ThemeToggle.jsx';
 
 export default function PrivateNavbar() {
   const { user } = useAuth();
@@ -144,6 +145,7 @@ export default function PrivateNavbar() {
 
         {/* Usuario y logout */}
         <div className="navbar-user">
+          <ThemeToggle />
           <UserDropdown />
         </div>
 
