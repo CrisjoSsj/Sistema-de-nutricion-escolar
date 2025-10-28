@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/nutritionist/Reports.css';
 import { useState, useRef } from 'react';
 
 export default function NutritionistReports() {
@@ -391,10 +392,11 @@ export default function NutritionistReports() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Reportes y Análisis</h1>
-        <p className="page-description">Genera reportes detallados sobre tus menús y su desempeño</p>
-      </div>
+      <div className="nutritionist-reports">
+        <div className="page-header">
+          <h1 className="page-title">Reportes y Análisis</h1>
+          <p className="page-description">Genera reportes detallados sobre tus menús y su desempeño</p>
+        </div>
 
       {/* Controles de reporte */}
       <div className="report-controls">
@@ -561,6 +563,7 @@ export default function NutritionistReports() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

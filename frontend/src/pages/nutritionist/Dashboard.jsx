@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/nutritionist/Dashboard.css';
 
 export default function NutritionistDashboard() {
   const getMenuTypeIcon = (tipo) => {
@@ -20,7 +21,8 @@ export default function NutritionistDashboard() {
 
   return (
     <DashboardLayout title="Panel de Nutricionista">
-      <h2 className="nutritionist-title">Panel de Nutricionista</h2>
+      <div className="nutritionist-dashboard">
+        <h2 className="nutritionist-title">Panel de Nutricionista</h2>
 
       {/* Estadísticas principales */}
       <div className="stats-grid">
@@ -164,6 +166,7 @@ export default function NutritionistDashboard() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </DashboardLayout>
   );

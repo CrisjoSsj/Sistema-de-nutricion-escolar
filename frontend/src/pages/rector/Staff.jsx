@@ -1,6 +1,7 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 import { useSchool } from '../../context/SchoolContext.jsx';
 import { useState } from 'react';
+import '../../styles/rector/Staff.css';
 
 export default function RectorStaff() {
   const { currentSchool } = useSchool();
@@ -193,7 +194,8 @@ export default function RectorStaff() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
+      <div className="rector-staff">
+        <div className="page-header">
         <h1 className="page-title">
           👥 Gestión de Personal
         </h1>
@@ -632,6 +634,7 @@ export default function RectorStaff() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

@@ -1,6 +1,7 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 import { useSchool } from '../../context/SchoolContext.jsx';
 import { useState } from 'react';
+import '../../styles/rector/Parents.css';
 
 export default function RectorParents() {
   const { currentSchool } = useSchool();
@@ -176,7 +177,8 @@ export default function RectorParents() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
+      <div className="rector-parents">
+        <div className="page-header">
         <h1 className="page-title">
           👨‍👩‍👧‍👦 Gestión de Apoderados
         </h1>
@@ -621,6 +623,7 @@ export default function RectorParents() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

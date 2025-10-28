@@ -1,0 +1,314 @@
+/* Archivo índice para importar todos los estilos de admin */
+
+/* Importar todos los módulos CSS específicos de admin */
+@import './Dashboard.css';
+@import './Users.css';
+@import './Schools.css';
+@import './Menus.css';
+@import './Reports.css';
+@import './Settings.css';
+
+/* Estilos comunes para todas las páginas de admin */
+.admin-page {
+  min-height: 100vh;
+  background: var(--gray-50);
+  padding: var(--spacing-6);
+}
+
+.admin-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Utilidades específicas para admin */
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-badge.primary {
+  background: var(--primary-100);
+  color: var(--primary-700);
+}
+
+.admin-badge.success {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.admin-badge.warning {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.admin-badge.danger {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+.admin-badge.info {
+  background: var(--info-100);
+  color: var(--info-700);
+}
+
+/* Botones específicos para admin */
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  user-select: none;
+}
+
+.admin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.admin-btn.btn-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-xs);
+}
+
+.admin-btn.btn-lg {
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-md);
+}
+
+/* Cards específicas para admin */
+.admin-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-normal);
+}
+
+.admin-card:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.admin-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.admin-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.admin-card-body {
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.admin-card-footer {
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Tablas específicas para admin */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+}
+
+.admin-table th {
+  background: var(--gray-50);
+  padding: var(--spacing-4);
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--font-size-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.admin-table td {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover {
+  background: var(--gray-50);
+}
+
+/* Formularios específicos para admin */
+.admin-form {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+}
+
+.admin-form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.admin-form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+.admin-form-input {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-normal);
+}
+
+.admin-form-input:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.admin-form-error {
+  color: var(--error-600);
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-1);
+}
+
+/* Estados de loading para admin */
+.admin-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8);
+  color: var(--gray-500);
+}
+
+.admin-loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--gray-200);
+  border-top: 3px solid var(--primary-500);
+  border-radius: 50%;
+  animation: adminSpin 1s linear infinite;
+  margin-bottom: var(--spacing-4);
+}
+
+@keyframes adminSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estados vacíos para admin */
+.admin-empty-state {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--gray-500);
+}
+
+.admin-empty-icon {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-4);
+  opacity: 0.5;
+}
+
+.admin-empty-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+.admin-empty-description {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Responsive utilities para admin */
+@media (max-width: 1024px) {
+  .admin-page {
+    padding: var(--spacing-4);
+  }
+  
+  .admin-card {
+    padding: var(--spacing-4);
+  }
+  
+  .admin-form {
+    padding: var(--spacing-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding: var(--spacing-2);
+  }
+  
+  .admin-card-header {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: stretch;
+  }
+  
+  .admin-card-footer {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: stretch;
+  }
+  
+  .admin-table-container {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .admin-form-group {
+    margin-bottom: var(--spacing-3);
+  }
+}

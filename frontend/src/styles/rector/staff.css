@@ -1,430 +1,684 @@
-/* ===== RECTOR STAFF STYLES ===== */
+/* Estilos específicos para la gestión de Personal de Rector */
 
-/* Grid de personal */
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--spacing-4);
+/* ===== PERSONAL RECTOR ===== */
+
+/* Header de página específico para personal */
+.rector-staff .page-header {
+  background: linear-gradient(135deg, var(--purple-500), var(--purple-600));
+  color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
   margin-bottom: var(--spacing-6);
 }
 
-.staff-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid #e2e8f0;
-  border-radius: var(--border-radius-xl);
-  padding: var(--spacing-4);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.staff-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
-  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
-}
-
-.staff-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  border-color: #8b5cf6;
-}
-
-.staff-header {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-3);
-  margin-bottom: var(--spacing-4);
-}
-
-.staff-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  border: 3px solid white;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
-  flex-shrink: 0;
-}
-
-.staff-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.staff-name {
-  font-size: var(--font-size-lg);
+.rector-staff .page-title {
+  font-size: var(--font-size-2xl);
   font-weight: 700;
-  color: #0f172a;
-  margin-bottom: var(--spacing-1);
-  line-height: 1.2;
+  margin: 0 0 var(--spacing-2) 0;
 }
 
-.staff-position {
-  font-size: var(--font-size-sm);
-  color: #8b5cf6;
-  font-weight: 600;
-  margin-bottom: var(--spacing-1);
+.rector-staff .page-description {
+  font-size: var(--font-size-md);
+  margin: 0;
+  opacity: 0.9;
 }
 
-.staff-department {
-  font-size: var(--font-size-xs);
-  color: #64748b;
-  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-  padding: 2px 8px;
-  border-radius: var(--border-radius-sm);
-  display: inline-block;
-}
-
-.staff-details {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-2);
-  margin-bottom: var(--spacing-4);
-}
-
-.staff-detail-item {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  font-size: var(--font-size-sm);
-  color: #374151;
-}
-
-.detail-icon {
-  color: #8b5cf6;
-  font-size: 0.9rem;
-  width: 16px;
-  text-align: center;
-}
-
-.detail-value {
-  font-weight: 500;
-}
-
-/* Estado del personal */
-.staff-status {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  margin-bottom: var(--spacing-3);
-}
-
-.status-indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.status-indicator.active {
-  background: #22c55e;
-  box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
-}
-
-.status-indicator.inactive {
-  background: #ef4444;
-  box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
-}
-
-.status-indicator.vacation {
-  background: #f59e0b;
-  box-shadow: 0 0 6px rgba(245, 158, 11, 0.4);
-}
-
-.status-text {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-}
-
-.status-text.active {
-  color: #166534;
-}
-
-.status-text.inactive {
-  color: #991b1b;
-}
-
-.status-text.vacation {
-  color: #92400e;
-}
-
-/* Especialidades y certificaciones */
-.staff-specialties {
-  margin-bottom: var(--spacing-3);
-}
-
-.specialties-title {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: #64748b;
-  margin-bottom: var(--spacing-2);
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-}
-
-.specialties-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-1);
-}
-
-.specialty-tag {
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
-  color: #7c3aed;
-  font-size: var(--font-size-xs);
-  font-weight: 500;
-  padding: 4px 8px;
-  border-radius: var(--border-radius-sm);
-  border: 1px solid #c4b5fd;
-}
-
-/* Acciones del personal */
-.staff-actions {
-  display: flex;
-  gap: var(--spacing-2);
-  justify-content: flex-end;
-}
-
-.staff-action-btn {
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.9rem;
-}
-
-.staff-action-btn.view {
-  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-  color: #1e40af;
-}
-
-.staff-action-btn.view:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-  color: white;
-  transform: scale(1.1);
-}
-
-.staff-action-btn.edit {
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
-  color: #7c3aed;
-}
-
-.staff-action-btn.edit:hover {
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-  color: white;
-  transform: scale(1.1);
-}
-
-.staff-action-btn.message {
-  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-  color: #166534;
-}
-
-.staff-action-btn.message:hover {
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-  color: white;
-  transform: scale(1.1);
-}
-
-/* Filtros específicos para personal */
-.staff-filters {
-  background: white;
-  border-radius: var(--border-radius-xl);
-  padding: var(--spacing-4);
-  margin-bottom: var(--spacing-4);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-3);
-  align-items: center;
-}
-
-.staff-filters .filter-select {
-  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-  border: 2px solid #d8b4fe;
-  color: #7c3aed;
-  min-width: 150px;
-}
-
-.staff-filters .filter-select:focus {
-  border-color: #8b5cf6;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-}
-
-.filter-group {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-}
-
-.filter-label {
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  color: #374151;
-  white-space: nowrap;
-}
-
-/* Stats del personal */
-.staff-stats {
+/* Estadísticas del personal */
+.rector-staff .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-4);
   margin-bottom: var(--spacing-6);
 }
 
-.staff-stats .stat-card {
-  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-  border: 1px solid #d8b4fe;
-}
-
-.staff-stats .stat-card::before {
-  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
-}
-
-.staff-stats .stat-icon {
-  color: #8b5cf6;
-}
-
-/* Organigrama del personal */
-.staff-hierarchy {
+.rector-staff .stat-card {
   background: white;
-  border-radius: var(--border-radius-xl);
-  padding: var(--spacing-4);
-  margin-bottom: var(--spacing-4);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.hierarchy-title {
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: var(--spacing-4);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-5);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
+  gap: var(--spacing-4);
+  transition: all var(--transition-normal);
 }
 
-.hierarchy-tree {
+.rector-staff .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.rector-staff .stat-icon {
+  font-size: var(--font-size-2xl);
+  padding: var(--spacing-3);
+  border-radius: var(--border-radius-lg);
+  background: var(--purple-50);
+  color: var(--purple-600);
+}
+
+.rector-staff .stat-content h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.rector-staff .stat-content p {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.rector-staff .stat-trend {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--success-600);
+}
+
+/* Controles y filtros */
+.rector-staff .controls-section {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-6);
+}
+
+.rector-staff .controls-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.rector-staff .controls-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.rector-staff .action-buttons {
+  display: flex;
   gap: var(--spacing-3);
 }
 
-.hierarchy-level {
+.rector-staff .btn-action {
+  background: var(--purple-600);
+  color: white;
+  border: none;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: var(--spacing-2);
-  padding-left: var(--spacing-4);
-  border-left: 2px solid #e2e8f0;
+  font-size: var(--font-size-sm);
 }
 
-.hierarchy-level:first-child {
-  padding-left: 0;
-  border-left: none;
+.rector-staff .btn-action:hover {
+  background: var(--purple-700);
+  transform: translateY(-1px);
 }
 
-.hierarchy-position {
-  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-  border: 1px solid #cbd5e1;
+.rector-staff .btn-secondary {
+  background: white;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+}
+
+.rector-staff .btn-secondary:hover {
+  background: var(--gray-50);
+}
+
+.rector-staff .filters-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: var(--spacing-4);
+  align-items: center;
+}
+
+.rector-staff .search-box {
+  position: relative;
+}
+
+.rector-staff .search-input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-3) var(--spacing-3) var(--spacing-10);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-normal);
+}
+
+.rector-staff .search-input:focus {
+  outline: none;
+  border-color: var(--purple-500);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+}
+
+.rector-staff .search-icon {
+  position: absolute;
+  left: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+}
+
+.rector-staff .filter-select {
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
+  background: white;
+  cursor: pointer;
+}
+
+/* Grid de personal */
+.rector-staff .staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.rector-staff .staff-card {
+  background: white;
   border-radius: var(--border-radius-lg);
+  padding: var(--spacing-5);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.rector-staff .staff-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.rector-staff .staff-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.rector-staff .staff-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--border-radius-full);
+  background: var(--purple-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  color: var(--purple-700);
+}
+
+.rector-staff .staff-info h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.rector-staff .staff-role {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.rector-staff .staff-department {
+  font-size: var(--font-size-xs);
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius);
+  display: inline-block;
+}
+
+.rector-staff .status-badge {
+  position: absolute;
+  top: var(--spacing-3);
+  right: var(--spacing-3);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.rector-staff .status-badge.active {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.rector-staff .status-badge.inactive {
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.rector-staff .status-badge.vacation {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.rector-staff .status-badge.sick {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+/* Información de contacto */
+.rector-staff .contact-info {
+  margin-bottom: var(--spacing-4);
+}
+
+.rector-staff .contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+}
+
+.rector-staff .contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.rector-staff .contact-icon {
+  width: 16px;
+  color: var(--gray-500);
+}
+
+.rector-staff .contact-value {
+  color: var(--gray-700);
+}
+
+/* Métricas del empleado */
+.rector-staff .employee-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+}
+
+.rector-staff .metric-item {
+  text-align: center;
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius);
+  background: var(--gray-50);
+}
+
+.rector-staff .metric-value {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.rector-staff .metric-label {
+  font-size: var(--font-size-xs);
+  color: var(--gray-600);
+  margin: 0;
+}
+
+/* Acciones de la tarjeta */
+.rector-staff .card-actions {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: center;
+}
+
+.rector-staff .action-btn {
+  flex: 1;
+  padding: var(--spacing-2);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-1);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.rector-staff .action-btn.view {
+  background: var(--primary-100);
+  color: var(--primary-700);
+}
+
+.rector-staff .action-btn.view:hover {
+  background: var(--primary-200);
+}
+
+.rector-staff .action-btn.contact {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.rector-staff .action-btn.contact:hover {
+  background: var(--warning-200);
+}
+
+.rector-staff .action-btn.edit {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.rector-staff .action-btn.edit:hover {
+  background: var(--success-200);
+}
+
+/* Vista de tabla del personal */
+.rector-staff .table-view {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-6);
+}
+
+.rector-staff .table-header {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  padding: var(--spacing-4);
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.rector-staff .view-toggle {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.rector-staff .toggle-btn {
   padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  background: white;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-normal);
+}
+
+.rector-staff .toggle-btn.active {
+  background: var(--purple-600);
+  color: white;
+  border-color: var(--purple-600);
+}
+
+.rector-staff .staff-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rector-staff .staff-table th {
+  background: var(--gray-50);
+  padding: var(--spacing-4);
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--font-size-sm);
+}
+
+.rector-staff .staff-table td {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+}
+
+.rector-staff .staff-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rector-staff .staff-table tr:hover {
+  background: var(--gray-50);
+}
+
+/* Información del empleado en tabla */
+.rector-staff .employee-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.rector-staff .employee-avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-full);
+  background: var(--purple-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--purple-700);
+  font-size: var(--font-size-sm);
+}
+
+.rector-staff .employee-details h4 {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.rector-staff .employee-details p {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0;
+}
+
+/* Badges de rol */
+.rector-staff .role-badge {
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.rector-staff .role-badge.teacher {
+  background: var(--primary-100);
+  color: var(--primary-700);
+}
+
+.rector-staff .role-badge.nutritionist {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.rector-staff .role-badge.admin {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.rector-staff .role-badge.maintenance {
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.rector-staff .role-badge.security {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+/* Información de horario */
+.rector-staff .schedule-info {
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+}
+
+.rector-staff .schedule-time {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.rector-staff .schedule-days {
+  color: var(--gray-600);
+  font-size: var(--font-size-xs);
+}
+
+/* Modal de detalles del empleado */
+.rector-staff .employee-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.rector-staff .modal-content {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.rector-staff .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.rector-staff .modal-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.rector-staff .modal-close {
+  background: none;
+  border: none;
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  color: var(--gray-500);
+  padding: var(--spacing-1);
+}
+
+.rector-staff .modal-close:hover {
+  color: var(--gray-700);
+}
+
+.rector-staff .employee-details-section {
+  margin-bottom: var(--spacing-6);
+}
+
+.rector-staff .section-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+.rector-staff .details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.rector-staff .detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.rector-staff .detail-label {
   font-size: var(--font-size-sm);
   font-weight: 600;
-  color: #374151;
+  color: var(--gray-700);
 }
 
-/* Responsive Design */
+.rector-staff .detail-value {
+  font-size: var(--font-size-md);
+  color: var(--gray-900);
+}
+
+/* Responsive design */
 @media (max-width: 1024px) {
-  .staff-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  .rector-staff .filters-row {
+    grid-template-columns: 1fr auto auto;
+    gap: var(--spacing-3);
   }
   
-  .staff-stats {
-    grid-template-columns: repeat(2, 1fr);
+  .rector-staff .staff-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .staff-filters {
+  .rector-staff .controls-header {
     flex-direction: column;
+    gap: var(--spacing-3);
     align-items: stretch;
   }
   
-  .filter-group {
-    flex-direction: column;
-    align-items: stretch;
+  .rector-staff .action-buttons {
+    justify-content: stretch;
   }
   
-  .staff-filters .filter-select {
-    width: 100%;
-    min-width: auto;
+  .rector-staff .btn-action {
+    flex: 1;
   }
   
-  .staff-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  .rector-staff .filters-row {
+    grid-template-columns: 1fr;
   }
   
-  .staff-header {
-    flex-direction: column;
-    text-align: center;
+  .rector-staff .staff-grid {
+    grid-template-columns: 1fr;
   }
   
-  .staff-avatar {
-    align-self: center;
+  .rector-staff .table-view {
+    overflow-x: auto;
   }
   
-  .staff-actions {
-    justify-content: center;
+  .rector-staff .staff-table {
+    min-width: 700px;
   }
   
-  .hierarchy-level {
-    padding-left: var(--spacing-2);
-    flex-direction: column;
+  .rector-staff .modal-content {
+    width: 95%;
+    margin: var(--spacing-4);
   }
 }
 
 @media (max-width: 480px) {
-  .staff-grid {
+  .rector-staff .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .rector-staff .employee-metrics {
     grid-template-columns: 1fr;
   }
   
-  .staff-stats {
+  .rector-staff .card-actions {
+    flex-direction: column;
+  }
+  
+  .rector-staff .details-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .staff-card {
-    margin: 0 -var(--spacing-2);
-    border-radius: var(--border-radius-lg);
-  }
-  
-  .specialties-list {
-    justify-content: center;
-  }
-  
-  .staff-details {
-    align-items: center;
-    text-align: center;
-  }
-  
-  .staff-detail-item {
-    justify-content: center;
   }
 }

@@ -1,0 +1,439 @@
+/* Estilos específicos para la página Children de Parent */
+
+/* ===== PARENT CHILDREN ===== */
+
+/* Encabezado con search y filtros */
+.parent-children .children-header {
+  background: linear-gradient(135deg, var(--purple-500), var(--purple-600));
+  color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-6);
+}
+
+.parent-children .children-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-4) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.parent-children .search-controls {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.parent-children .search-input {
+  flex: 1;
+  min-width: 250px;
+  padding: var(--spacing-3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: var(--font-size-md);
+}
+
+.parent-children .search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.parent-children .search-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.parent-children .filter-select {
+  padding: var(--spacing-3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: var(--font-size-md);
+  min-width: 150px;
+}
+
+.parent-children .filter-select option {
+  background: var(--purple-600);
+  color: white;
+}
+
+/* Grid de resumen de hijos */
+.parent-children .children-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.parent-children .summary-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray-200);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.parent-children .summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--purple-500);
+}
+
+.parent-children .summary-icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-2);
+  display: block;
+}
+
+.parent-children .summary-number {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.parent-children .summary-label {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Lista de hijos */
+.parent-children .children-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.parent-children .child-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.parent-children .child-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.parent-children .child-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.parent-children .child-avatar {
+  font-size: var(--font-size-3xl);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--purple-100), var(--purple-200));
+  border-radius: var(--border-radius-full);
+  border: 3px solid var(--purple-300);
+  flex-shrink: 0;
+}
+
+.parent-children .child-basic-info {
+  flex: 1;
+}
+
+.parent-children .child-name {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.parent-children .child-grade-age {
+  font-size: var(--font-size-md);
+  color: var(--gray-600);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.parent-children .child-school {
+  font-size: var(--font-size-sm);
+  color: var(--purple-600);
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+/* Información detallada del hijo */
+.parent-children .child-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.parent-children .detail-item {
+  padding: var(--spacing-3);
+  background: var(--gray-50);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--gray-200);
+}
+
+.parent-children .detail-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.parent-children .detail-value {
+  font-size: var(--font-size-sm);
+  color: var(--gray-900);
+  font-weight: 600;
+  margin: 0;
+}
+
+.parent-children .detail-value.high {
+  color: var(--green-600);
+}
+
+.parent-children .detail-value.medium {
+  color: var(--orange-600);
+}
+
+.parent-children .detail-value.low {
+  color: var(--red-600);
+}
+
+/* Alergias */
+.parent-children .allergies-section {
+  margin-bottom: var(--spacing-4);
+}
+
+.parent-children .allergies-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 0 0 var(--spacing-2) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.parent-children .allergies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.parent-children .allergy-tag {
+  background: var(--red-100);
+  color: var(--red-700);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius-full);
+  border: 1px solid var(--red-200);
+}
+
+.parent-children .no-allergies {
+  color: var(--green-600);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+/* Acciones del hijo */
+.parent-children .child-actions {
+  display: flex;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+}
+
+.parent-children .child-actions .btn {
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-1);
+  border: 1px solid transparent;
+  font-size: var(--font-size-xs);
+  text-decoration: none;
+  flex: 1;
+  min-width: 100px;
+}
+
+.parent-children .child-actions .btn-primary {
+  background: var(--purple-600);
+  color: white;
+  border-color: var(--purple-600);
+}
+
+.parent-children .child-actions .btn-primary:hover {
+  background: var(--purple-700);
+  border-color: var(--purple-700);
+  transform: translateY(-1px);
+}
+
+.parent-children .child-actions .btn-secondary {
+  background: var(--green-600);
+  color: white;
+  border-color: var(--green-600);
+}
+
+.parent-children .child-actions .btn-secondary:hover {
+  background: var(--green-700);
+  border-color: var(--green-700);
+  transform: translateY(-1px);
+}
+
+.parent-children .child-actions .btn-outline {
+  background: transparent;
+  color: var(--gray-700);
+  border-color: var(--gray-300);
+}
+
+.parent-children .child-actions .btn-outline:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-400);
+  color: var(--gray-900);
+}
+
+/* Estados especiales */
+.parent-children .child-card.highlight {
+  border-color: var(--purple-300);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.2);
+}
+
+.parent-children .child-card.warning {
+  border-color: var(--orange-300);
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.05), rgba(251, 146, 60, 0.1));
+}
+
+.parent-children .child-card.alert {
+  border-color: var(--red-300);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.1));
+}
+
+/* Empty state */
+.parent-children .empty-state {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--gray-600);
+}
+
+.parent-children .empty-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-4);
+  opacity: 0.6;
+}
+
+.parent-children .empty-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.parent-children .empty-message {
+  font-size: var(--font-size-md);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .parent-children .children-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .parent-children .child-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .parent-children .search-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .parent-children .search-input,
+  .parent-children .filter-select {
+    min-width: unset;
+    width: 100%;
+  }
+  
+  .parent-children .children-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .parent-children .children-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .parent-children .child-header {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-2);
+  }
+  
+  .parent-children .child-actions {
+    flex-direction: column;
+  }
+  
+  .parent-children .child-actions .btn {
+    min-width: unset;
+    flex: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .parent-children .children-header {
+    padding: var(--spacing-4);
+  }
+  
+  .parent-children .children-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .parent-children .children-summary {
+    grid-template-columns: 1fr;
+  }
+  
+  .parent-children .child-card {
+    padding: var(--spacing-4);
+  }
+  
+  .parent-children .child-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: var(--font-size-2xl);
+  }
+}

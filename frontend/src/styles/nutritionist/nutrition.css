@@ -1,0 +1,465 @@
+/* Estilos específicos para Análisis Nutricional de Nutritionist */
+
+/* ===== NUTRITIONIST NUTRITION ===== */
+
+/* Header de página específico para análisis nutricional */
+.nutritionist-nutrition .page-header {
+  background: linear-gradient(135deg, var(--success-500), var(--success-600));
+  color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-nutrition .page-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.nutritionist-nutrition .page-description {
+  font-size: var(--font-size-md);
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Panel de análisis nutricional */
+.nutritionist-nutrition .analysis-panel {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-nutrition .panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-nutrition .panel-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.nutritionist-nutrition .analysis-controls {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.nutritionist-nutrition .btn-analyze {
+  background: var(--success-600);
+  color: white;
+  border: none;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-nutrition .btn-analyze:hover {
+  background: var(--success-700);
+  transform: translateY(-1px);
+}
+
+/* Métricas nutricionales */
+.nutritionist-nutrition .nutrition-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-nutrition .metric-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-5);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-nutrition .metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.nutritionist-nutrition .metric-icon {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-3);
+  display: block;
+}
+
+.nutritionist-nutrition .metric-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.nutritionist-nutrition .metric-label {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.nutritionist-nutrition .metric-status {
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nutritionist-nutrition .metric-status.optimal {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.nutritionist-nutrition .metric-status.warning {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.nutritionist-nutrition .metric-status.critical {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+/* Gráficos nutricionales */
+.nutritionist-nutrition .charts-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-nutrition .chart-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+}
+
+.nutritionist-nutrition .chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.nutritionist-nutrition .chart-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.nutritionist-nutrition .chart-actions {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.nutritionist-nutrition .btn-export {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border: none;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-nutrition .btn-export:hover {
+  background: var(--gray-200);
+}
+
+.nutritionist-nutrition .chart-container {
+  height: 300px;
+  background: var(--gray-50);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-500);
+  font-size: var(--font-size-sm);
+  border: 2px dashed var(--gray-300);
+}
+
+/* Análisis por estudiante */
+.nutritionist-nutrition .student-analysis {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-nutrition .student-analysis h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+.nutritionist-nutrition .student-filters {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr auto;
+  gap: var(--spacing-4);
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-nutrition .filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.nutritionist-nutrition .filter-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.nutritionist-nutrition .filter-select {
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  background: white;
+  cursor: pointer;
+}
+
+.nutritionist-nutrition .students-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.nutritionist-nutrition .students-table th {
+  background: var(--gray-50);
+  padding: var(--spacing-3);
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-nutrition .students-table td {
+  padding: var(--spacing-3);
+  border-bottom: 1px solid var(--gray-100);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-nutrition .students-table tr:last-child td {
+  border-bottom: none;
+}
+
+.nutritionist-nutrition .students-table tr:hover {
+  background: var(--gray-50);
+}
+
+.nutritionist-nutrition .student-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.nutritionist-nutrition .student-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-full);
+  background: var(--primary-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--primary-700);
+}
+
+.nutritionist-nutrition .nutritional-status {
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nutritionist-nutrition .nutritional-status.normal {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.nutritionist-nutrition .nutritional-status.underweight {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.nutritionist-nutrition .nutritional-status.overweight {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+/* Recomendaciones nutricionales */
+.nutritionist-nutrition .recommendations {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+}
+
+.nutritionist-nutrition .recommendations h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+.nutritionist-nutrition .recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.nutritionist-nutrition .recommendation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--gray-200);
+  background: var(--gray-50);
+}
+
+.nutritionist-nutrition .recommendation-icon {
+  font-size: var(--font-size-lg);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--success-100);
+  border-radius: var(--border-radius-full);
+  flex-shrink: 0;
+}
+
+.nutritionist-nutrition .recommendation-content h4 {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.nutritionist-nutrition .recommendation-content p {
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.nutritionist-nutrition .recommendation-priority {
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: var(--spacing-2);
+  display: inline-block;
+}
+
+.nutritionist-nutrition .recommendation-priority.high {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+.nutritionist-nutrition .recommendation-priority.medium {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.nutritionist-nutrition .recommendation-priority.low {
+  background: var(--info-100);
+  color: var(--info-700);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .nutritionist-nutrition .charts-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .nutritionist-nutrition .student-filters {
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: var(--spacing-3);
+  }
+}
+
+@media (max-width: 768px) {
+  .nutritionist-nutrition .panel-header {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: stretch;
+  }
+  
+  .nutritionist-nutrition .analysis-controls {
+    justify-content: stretch;
+  }
+  
+  .nutritionist-nutrition .btn-analyze {
+    flex: 1;
+  }
+  
+  .nutritionist-nutrition .nutrition-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nutritionist-nutrition .student-filters {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+  
+  .nutritionist-nutrition .students-table {
+    font-size: var(--font-size-xs);
+  }
+  
+  .nutritionist-nutrition .chart-header {
+    flex-direction: column;
+    gap: var(--spacing-2);
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .nutritionist-nutrition .nutrition-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .nutritionist-nutrition .recommendation-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nutritionist-nutrition .chart-container {
+    height: 200px;
+  }
+}

@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/admin/Reports.css';
 import { useState } from 'react';
 
 export default function Reports() {
@@ -45,10 +46,11 @@ export default function Reports() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Reportes y Análisis</h1>
-        <p className="page-description">Analiza el rendimiento y estadísticas del sistema nutricional</p>
-      </div>
+      <div className="admin-reports">
+        <div className="page-header">
+          <h1 className="page-title">Reportes y Análisis</h1>
+          <p className="page-description">Analiza el rendimiento y estadísticas del sistema nutricional</p>
+        </div>
 
       {/* Controles de filtros */}
       <div className="reports-controls">
@@ -368,6 +370,7 @@ export default function Reports() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

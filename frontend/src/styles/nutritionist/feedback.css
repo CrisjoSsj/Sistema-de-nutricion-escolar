@@ -1,0 +1,708 @@
+/* Estilos específicos para Feedback de Nutritionist */
+
+/* ===== NUTRITIONIST FEEDBACK ===== */
+
+/* Header de página específico para feedback */
+.nutritionist-feedback .page-header {
+  background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
+  color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-feedback .page-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.nutritionist-feedback .page-description {
+  font-size: var(--font-size-md);
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Estadísticas de feedback */
+.nutritionist-feedback .feedback-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-feedback .stat-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-5);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-feedback .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.nutritionist-feedback .stat-icon {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-3);
+  padding: var(--spacing-3);
+  border-radius: var(--border-radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutritionist-feedback .stat-icon.total {
+  background: var(--blue-100);
+  color: var(--blue-600);
+}
+
+.nutritionist-feedback .stat-icon.positive {
+  background: var(--success-100);
+  color: var(--success-600);
+}
+
+.nutritionist-feedback .stat-icon.neutral {
+  background: var(--warning-100);
+  color: var(--warning-600);
+}
+
+.nutritionist-feedback .stat-icon.negative {
+  background: var(--error-100);
+  color: var(--error-600);
+}
+
+.nutritionist-feedback .stat-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.nutritionist-feedback .stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.nutritionist-feedback .stat-change {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius);
+}
+
+.nutritionist-feedback .stat-change.positive {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.nutritionist-feedback .stat-change.negative {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+/* Panel de filtros */
+.nutritionist-feedback .filters-panel {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-5);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-feedback .filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.nutritionist-feedback .filters-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.nutritionist-feedback .btn-clear-filters {
+  background: transparent;
+  color: var(--gray-600);
+  border: 1px solid var(--gray-300);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-feedback .btn-clear-filters:hover {
+  background: var(--gray-50);
+}
+
+.nutritionist-feedback .filters-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.nutritionist-feedback .filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.nutritionist-feedback .filter-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.nutritionist-feedback .filter-select,
+.nutritionist-feedback .filter-input {
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  background: white;
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-feedback .filter-select:focus,
+.nutritionist-feedback .filter-input:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+}
+
+/* Rating filters */
+.nutritionist-feedback .rating-filters {
+  display: flex;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+}
+
+.nutritionist-feedback .rating-filter {
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.nutritionist-feedback .rating-filter:hover {
+  background: var(--gray-200);
+}
+
+.nutritionist-feedback .rating-filter.active {
+  background: var(--orange-100);
+  border-color: var(--orange-500);
+  color: var(--orange-700);
+}
+
+/* Lista de feedback */
+.nutritionist-feedback .feedback-list {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+}
+
+.nutritionist-feedback .list-header {
+  background: var(--gray-50);
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nutritionist-feedback .list-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.nutritionist-feedback .list-actions {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.nutritionist-feedback .btn-export {
+  background: var(--green-600);
+  color: white;
+  border: none;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.nutritionist-feedback .btn-export:hover {
+  background: var(--green-700);
+}
+
+.nutritionist-feedback .view-toggle {
+  display: flex;
+  background: var(--gray-100);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-1);
+}
+
+.nutritionist-feedback .view-btn {
+  background: transparent;
+  border: none;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+}
+
+.nutritionist-feedback .view-btn.active {
+  background: white;
+  color: var(--gray-900);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+}
+
+/* Vista de tarjetas de feedback */
+.nutritionist-feedback .feedback-cards {
+  padding: var(--spacing-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.nutritionist-feedback .feedback-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-5);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.nutritionist-feedback .feedback-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.nutritionist-feedback .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-3);
+}
+
+.nutritionist-feedback .student-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.nutritionist-feedback .student-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-full);
+  background: var(--primary-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--primary-700);
+}
+
+.nutritionist-feedback .student-details h4 {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.nutritionist-feedback .student-details p {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.nutritionist-feedback .feedback-rating {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.nutritionist-feedback .star {
+  font-size: var(--font-size-lg);
+  color: var(--warning-400);
+}
+
+.nutritionist-feedback .star.filled {
+  color: var(--warning-500);
+}
+
+.nutritionist-feedback .feedback-content {
+  margin-bottom: var(--spacing-3);
+}
+
+.nutritionist-feedback .feedback-text {
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+  line-height: 1.5;
+  margin: 0 0 var(--spacing-3) 0;
+}
+
+.nutritionist-feedback .feedback-menu {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  background: var(--gray-50);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius);
+  margin: 0;
+}
+
+.nutritionist-feedback .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-3);
+  border-top: 1px solid var(--gray-100);
+}
+
+.nutritionist-feedback .feedback-date {
+  font-size: var(--font-size-xs);
+  color: var(--gray-500);
+}
+
+.nutritionist-feedback .feedback-actions {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.nutritionist-feedback .btn-action {
+  background: transparent;
+  border: none;
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  color: var(--gray-600);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-feedback .btn-action:hover {
+  background: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.nutritionist-feedback .btn-action.respond {
+  color: var(--blue-600);
+}
+
+.nutritionist-feedback .btn-action.flag {
+  color: var(--error-600);
+}
+
+/* Vista de tabla */
+.nutritionist-feedback .feedback-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nutritionist-feedback .feedback-table th {
+  background: var(--gray-50);
+  padding: var(--spacing-3);
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-feedback .feedback-table td {
+  padding: var(--spacing-3);
+  border-bottom: 1px solid var(--gray-100);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-feedback .feedback-table tr:last-child td {
+  border-bottom: none;
+}
+
+.nutritionist-feedback .feedback-table tr:hover {
+  background: var(--gray-50);
+}
+
+.nutritionist-feedback .table-rating {
+  display: flex;
+  gap: var(--spacing-1);
+  justify-content: center;
+}
+
+.nutritionist-feedback .table-comment {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--gray-700);
+}
+
+/* Modal de respuesta */
+.nutritionist-feedback .response-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(0 0 0 / 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-4);
+}
+
+.nutritionist-feedback .modal-content {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+.nutritionist-feedback .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.nutritionist-feedback .modal-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.nutritionist-feedback .btn-close-modal {
+  background: transparent;
+  border: none;
+  font-size: var(--font-size-xl);
+  color: var(--gray-400);
+  cursor: pointer;
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-feedback .btn-close-modal:hover {
+  background: var(--gray-100);
+  color: var(--gray-600);
+}
+
+.nutritionist-feedback .original-feedback {
+  background: var(--gray-50);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.nutritionist-feedback .original-feedback h4 {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.nutritionist-feedback .response-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.nutritionist-feedback .form-group label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+.nutritionist-feedback .form-group textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  font-family: inherit;
+  resize: vertical;
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-feedback .form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+}
+
+.nutritionist-feedback .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-6);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--gray-200);
+}
+
+.nutritionist-feedback .btn-cancel {
+  background: transparent;
+  color: var(--gray-600);
+  border: 1px solid var(--gray-300);
+  padding: var(--spacing-3) var(--spacing-5);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-weight: 600;
+}
+
+.nutritionist-feedback .btn-cancel:hover {
+  background: var(--gray-50);
+}
+
+.nutritionist-feedback .btn-send-response {
+  background: var(--orange-600);
+  color: white;
+  border: none;
+  padding: var(--spacing-3) var(--spacing-5);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-feedback .btn-send-response:hover {
+  background: var(--orange-700);
+}
+
+/* Estados vacíos */
+.nutritionist-feedback .empty-state {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--gray-500);
+}
+
+.nutritionist-feedback .empty-state-icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-4);
+  color: var(--gray-400);
+}
+
+.nutritionist-feedback .empty-state-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.nutritionist-feedback .empty-state-description {
+  font-size: var(--font-size-sm);
+  color: var(--gray-500);
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .nutritionist-feedback .feedback-cards {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .nutritionist-feedback .filters-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nutritionist-feedback .filters-header {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: stretch;
+  }
+  
+  .nutritionist-feedback .filters-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .nutritionist-feedback .rating-filters {
+    flex-wrap: wrap;
+  }
+  
+  .nutritionist-feedback .feedback-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nutritionist-feedback .list-header {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: stretch;
+  }
+  
+  .nutritionist-feedback .view-toggle {
+    order: -1;
+  }
+  
+  .nutritionist-feedback .feedback-cards {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-4);
+  }
+  
+  .nutritionist-feedback .card-header {
+    flex-direction: column;
+    gap: var(--spacing-2);
+    align-items: flex-start;
+  }
+  
+  .nutritionist-feedback .modal-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .nutritionist-feedback .feedback-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .nutritionist-feedback .feedback-table {
+    font-size: var(--font-size-xs);
+  }
+  
+  .nutritionist-feedback .table-comment {
+    max-width: 150px;
+  }
+  
+  .nutritionist-feedback .modal-content {
+    margin: var(--spacing-2);
+    max-width: calc(100vw - var(--spacing-4));
+  }
+}

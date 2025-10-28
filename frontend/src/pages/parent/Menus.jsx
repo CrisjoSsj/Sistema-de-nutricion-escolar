@@ -1,5 +1,6 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 import { useState } from 'react';
+import '../../styles/parent/Menus.css';
 
 export default function ParentMenus() {
   const [selectedWeek, setSelectedWeek] = useState(0);
@@ -190,10 +191,11 @@ export default function ParentMenus() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Menús Semanales</h1>
-        <p className="page-description">Revisa los menús programados para tus hijos</p>
-      </div>
+      <div className="parent-menus">
+        <div className="page-header">
+          <h1 className="page-title">Menús Semanales</h1>
+          <p className="page-description">Revisa los menús programados para tus hijos</p>
+        </div>
 
       {/* Controles de filtro */}
       <div className="menu-controls">
@@ -375,6 +377,7 @@ export default function ParentMenus() {
         <button className="btn btn-outline">
           💬 Enviar Comentario
         </button>
+      </div>
       </div>
     </DashboardLayout>
   );

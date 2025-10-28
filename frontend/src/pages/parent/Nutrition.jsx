@@ -1,5 +1,6 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 import { useState } from 'react';
+import '../../styles/parent/Nutrition.css';
 
 export default function ParentNutrition() {
   const [selectedChild, setSelectedChild] = useState('1');
@@ -124,10 +125,11 @@ export default function ParentNutrition() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Seguimiento Nutricional</h1>
-        <p className="page-description">Monitorea el progreso nutricional de tus hijos</p>
-      </div>
+      <div className="parent-nutrition">
+        <div className="page-header">
+          <h1 className="page-title">Seguimiento Nutricional</h1>
+          <p className="page-description">Monitorea el progreso nutricional de tus hijos</p>
+        </div>
 
       {/* Selectores */}
       <div className="nutrition-controls">
@@ -416,6 +418,7 @@ export default function ParentNutrition() {
         <button className="btn btn-outline">
           📱 Configurar Recordatorios
         </button>
+      </div>
       </div>
     </DashboardLayout>
   );

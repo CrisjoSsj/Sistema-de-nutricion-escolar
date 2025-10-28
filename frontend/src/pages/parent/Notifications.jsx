@@ -1,5 +1,6 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 import { useState } from 'react';
+import '../../styles/parent/Notifications.css';
 
 export default function ParentNotifications() {
   const [selectedFilter, setSelectedFilter] = useState('all');
@@ -204,13 +205,14 @@ export default function ParentNotifications() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">
-          Notificaciones 
-          {unreadCount > 0 && <span className="unread-badge">{unreadCount}</span>}
-        </h1>
-        <p className="page-description">Mantente al día con las novedades sobre la alimentación de tus hijos</p>
-      </div>
+      <div className="parent-notifications">
+        <div className="page-header">
+          <h1 className="page-title">
+            Notificaciones 
+            {unreadCount > 0 && <span className="unread-badge">{unreadCount}</span>}
+          </h1>
+          <p className="page-description">Mantente al día con las novedades sobre la alimentación de tus hijos</p>
+        </div>
 
       {/* Controles de notificaciones */}
       <div className="notifications-controls">
@@ -484,6 +486,7 @@ export default function ParentNotifications() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </DashboardLayout>
   );

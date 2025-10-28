@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/admin/Schools.css';
 import { useState } from 'react';
 
 export default function Schools() {
@@ -71,10 +72,11 @@ export default function Schools() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Gestión de Escuelas</h1>
-        <p className="page-description">Administra las instituciones educativas del sistema</p>
-      </div>
+      <div className="admin-schools">
+        <div className="page-header">
+          <h1 className="page-title">Gestión de Escuelas</h1>
+          <p className="page-description">Administra las instituciones educativas del sistema</p>
+        </div>
 
       {/* Estadísticas de escuelas */}
       <div className="stats-grid">
@@ -276,6 +278,7 @@ export default function Schools() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

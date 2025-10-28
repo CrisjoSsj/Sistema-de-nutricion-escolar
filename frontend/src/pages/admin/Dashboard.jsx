@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/admin/Dashboard.css';
 
 export default function AdminDashboard() {
   // Manejadores para botones de acciones rápidas
@@ -16,9 +17,10 @@ export default function AdminDashboard() {
 
   return (
     <DashboardLayout title="Panel de Administración" showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Panel de Administración</h1>
-      </div>
+      <div className="admin-dashboard">
+        <div className="page-header">
+          <h1 className="page-title">Panel de Administración</h1>
+        </div>
 
       {/* Estadísticas principales */}
       <div className="stats-grid">
@@ -121,6 +123,7 @@ export default function AdminDashboard() {
             <div className="summary-label">Reportes nutricionales disponibles</div>
           </div>
         </div>
+      </div>
       </div>
     </DashboardLayout>
   );

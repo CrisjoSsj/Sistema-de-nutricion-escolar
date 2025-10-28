@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/admin/Settings.css';
 import { useState } from 'react';
 
 export default function Settings() {
@@ -62,10 +63,11 @@ export default function Settings() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Configuración del Sistema</h1>
-        <p className="page-description">Gestiona la configuración general del sistema de nutrición escolar</p>
-      </div>
+      <div className="admin-settings">
+        <div className="page-header">
+          <h1 className="page-title">Configuración del Sistema</h1>
+          <p className="page-description">Gestiona la configuración general del sistema de nutrición escolar</p>
+        </div>
 
       {/* Confirmación de guardado */}
       {showSaveConfirmation && (
@@ -472,6 +474,7 @@ export default function Settings() {
         <button className="btn btn-primary" onClick={saveSettings}>
           💾 Guardar Configuración
         </button>
+      </div>
       </div>
     </DashboardLayout>
   );

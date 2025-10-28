@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/parent/Dashboard.css';
 
 export default function ParentDashboard() {
   // Manejadores para botones de acciones rápidas
@@ -83,7 +84,8 @@ export default function ParentDashboard() {
 
   return (
     <DashboardLayout title="Panel de Padre/Tutor">
-      <h2 className="parent-title">Panel de Padre/Tutor</h2>
+      <div className="parent-dashboard">
+        <h2 className="parent-title">Panel de Padre/Tutor</h2>
 
       {/* Estadísticas principales */}
       <div className="stats-grid">
@@ -343,6 +345,7 @@ export default function ParentDashboard() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </DashboardLayout>
   );

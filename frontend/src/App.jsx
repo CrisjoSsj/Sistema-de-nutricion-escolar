@@ -54,7 +54,6 @@ import RectorStaff from './pages/rector/Staff.jsx';
 import RectorReports from './pages/rector/Reports.jsx';
 
 // Página de prueba
-import EnhancedPageExample from './components/examples/EnhancedPageExample.jsx';
 import ModernUIShowcase from './components/ModernUIShowcase.jsx';
 
 // Componente para la página de inicio (redirección inteligente)
@@ -117,7 +116,6 @@ function App() {
           {/* Rutas públicas */}
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/example" element={<EnhancedPageExample />} />
           <Route path="/showcase" element={<ModernUIShowcase />} />
           
           {/* Rutas protegidas - Dashboard general */}

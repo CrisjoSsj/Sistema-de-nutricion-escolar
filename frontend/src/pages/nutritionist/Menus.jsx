@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/nutritionist/Menus.css';
 import { useState } from 'react';
 
 export default function NutritionistMenus() {
@@ -92,10 +93,11 @@ export default function NutritionistMenus() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Gestión de Menús</h1>
-        <p className="page-description">Crea y administra los menús nutricionales para tu escuela</p>
-      </div>
+      <div className="nutritionist-menus">
+        <div className="page-header">
+          <h1 className="page-title">Gestión de Menús</h1>
+          <p className="page-description">Crea y administra los menús nutricionales para tu escuela</p>
+        </div>
 
       {/* Estadísticas del nutricionista */}
       <div className="stats-grid">
@@ -436,6 +438,7 @@ export default function NutritionistMenus() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

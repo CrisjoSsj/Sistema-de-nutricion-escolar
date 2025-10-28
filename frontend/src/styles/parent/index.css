@@ -1,0 +1,563 @@
+/* Estilos centralizados para la interfaz Parent */
+
+/* ===== PARENT GLOBAL STYLES ===== */
+
+/* Variables específicas para parent */
+:root {
+  --parent-primary: var(--blue-600);
+  --parent-primary-hover: var(--blue-700);
+  --parent-secondary: var(--purple-600);
+  --parent-secondary-hover: var(--purple-700);
+  --parent-accent: var(--green-600);
+  --parent-accent-hover: var(--green-700);
+  --parent-warning: var(--orange-600);
+  --parent-danger: var(--red-600);
+}
+
+/* Botones globales para parent */
+.parent-dashboard .btn,
+.parent-children .btn,
+.parent-feedback .btn,
+.parent-menus .btn,
+.parent-notifications .btn,
+.parent-nutrition .btn {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  border: 1px solid transparent;
+  font-size: var(--font-size-md);
+  text-decoration: none;
+  text-align: center;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.parent-dashboard .btn:focus,
+.parent-children .btn:focus,
+.parent-feedback .btn:focus,
+.parent-menus .btn:focus,
+.parent-notifications .btn:focus,
+.parent-nutrition .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Botones primarios - azul para parent */
+.parent-dashboard .btn-primary,
+.parent-children .btn-primary,
+.parent-feedback .btn-primary,
+.parent-menus .btn-primary,
+.parent-notifications .btn-primary,
+.parent-nutrition .btn-primary {
+  background: var(--parent-primary);
+  color: white;
+  border-color: var(--parent-primary);
+}
+
+.parent-dashboard .btn-primary:hover,
+.parent-children .btn-primary:hover,
+.parent-feedback .btn-primary:hover,
+.parent-menus .btn-primary:hover,
+.parent-notifications .btn-primary:hover,
+.parent-nutrition .btn-primary:hover {
+  background: var(--parent-primary-hover);
+  border-color: var(--parent-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Botones secundarios - púrpura para parent */
+.parent-dashboard .btn-secondary,
+.parent-children .btn-secondary,
+.parent-feedback .btn-secondary,
+.parent-menus .btn-secondary,
+.parent-notifications .btn-secondary,
+.parent-nutrition .btn-secondary {
+  background: var(--parent-secondary);
+  color: white;
+  border-color: var(--parent-secondary);
+}
+
+.parent-dashboard .btn-secondary:hover,
+.parent-children .btn-secondary:hover,
+.parent-feedback .btn-secondary:hover,
+.parent-menus .btn-secondary:hover,
+.parent-notifications .btn-secondary:hover,
+.parent-nutrition .btn-secondary:hover {
+  background: var(--parent-secondary-hover);
+  border-color: var(--parent-secondary-hover);
+  transform: translateY(-1px);
+}
+
+/* Botones de éxito - verde para parent */
+.parent-dashboard .btn-success,
+.parent-children .btn-success,
+.parent-feedback .btn-success,
+.parent-menus .btn-success,
+.parent-notifications .btn-success,
+.parent-nutrition .btn-success {
+  background: var(--parent-accent);
+  color: white;
+  border-color: var(--parent-accent);
+}
+
+.parent-dashboard .btn-success:hover,
+.parent-children .btn-success:hover,
+.parent-feedback .btn-success:hover,
+.parent-menus .btn-success:hover,
+.parent-notifications .btn-success:hover,
+.parent-nutrition .btn-success:hover {
+  background: var(--parent-accent-hover);
+  border-color: var(--parent-accent-hover);
+  transform: translateY(-1px);
+}
+
+/* Botones outline para parent */
+.parent-dashboard .btn-outline,
+.parent-children .btn-outline,
+.parent-feedback .btn-outline,
+.parent-menus .btn-outline,
+.parent-notifications .btn-outline,
+.parent-nutrition .btn-outline {
+  background: transparent;
+  color: var(--gray-700);
+  border-color: var(--gray-300);
+}
+
+.parent-dashboard .btn-outline:hover,
+.parent-children .btn-outline:hover,
+.parent-feedback .btn-outline:hover,
+.parent-menus .btn-outline:hover,
+.parent-notifications .btn-outline:hover,
+.parent-nutrition .btn-outline:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-400);
+  color: var(--gray-900);
+}
+
+/* Botones de peligro para parent */
+.parent-dashboard .btn-danger,
+.parent-children .btn-danger,
+.parent-feedback .btn-danger,
+.parent-menus .btn-danger,
+.parent-notifications .btn-danger,
+.parent-nutrition .btn-danger {
+  background: var(--parent-danger);
+  color: white;
+  border-color: var(--parent-danger);
+}
+
+.parent-dashboard .btn-danger:hover,
+.parent-children .btn-danger:hover,
+.parent-feedback .btn-danger:hover,
+.parent-menus .btn-danger:hover,
+.parent-notifications .btn-danger:hover,
+.parent-nutrition .btn-danger:hover {
+  background: var(--red-700);
+  border-color: var(--red-700);
+  transform: translateY(-1px);
+}
+
+/* Botones pequeños para parent */
+.parent-dashboard .btn-sm,
+.parent-children .btn-sm,
+.parent-feedback .btn-sm,
+.parent-menus .btn-sm,
+.parent-notifications .btn-sm,
+.parent-nutrition .btn-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+  min-height: 36px;
+}
+
+/* Botones grandes para parent */
+.parent-dashboard .btn-lg,
+.parent-children .btn-lg,
+.parent-feedback .btn-lg,
+.parent-menus .btn-lg,
+.parent-notifications .btn-lg,
+.parent-nutrition .btn-lg {
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-lg);
+  min-height: 52px;
+}
+
+/* Headers de página comunes para parent */
+.parent-dashboard .page-header,
+.parent-children .page-header,
+.parent-feedback .page-header,
+.parent-menus .page-header,
+.parent-notifications .page-header,
+.parent-nutrition .page-header {
+  background: linear-gradient(135deg, var(--parent-primary), var(--parent-primary-hover));
+  color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-6);
+}
+
+.parent-dashboard .page-title,
+.parent-children .page-title,
+.parent-feedback .page-title,
+.parent-menus .page-title,
+.parent-notifications .page-title,
+.parent-nutrition .page-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-2) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.parent-dashboard .page-description,
+.parent-children .page-description,
+.parent-feedback .page-description,
+.parent-menus .page-description,
+.parent-notifications .page-description,
+.parent-nutrition .page-description {
+  font-size: var(--font-size-md);
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Cards comunes para parent */
+.parent-dashboard .card,
+.parent-children .card,
+.parent-feedback .card,
+.parent-menus .card,
+.parent-notifications .card,
+.parent-nutrition .card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-normal);
+}
+
+.parent-dashboard .card:hover,
+.parent-children .card:hover,
+.parent-feedback .card:hover,
+.parent-menus .card:hover,
+.parent-notifications .card:hover,
+.parent-nutrition .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Forms comunes para parent */
+.parent-dashboard .form-group,
+.parent-children .form-group,
+.parent-feedback .form-group,
+.parent-menus .form-group,
+.parent-notifications .form-group,
+.parent-nutrition .form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.parent-dashboard .form-label,
+.parent-children .form-label,
+.parent-feedback .form-label,
+.parent-menus .form-label,
+.parent-notifications .form-label,
+.parent-nutrition .form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.parent-dashboard .form-input,
+.parent-children .form-input,
+.parent-feedback .form-input,
+.parent-menus .form-input,
+.parent-notifications .form-input,
+.parent-nutrition .form-input,
+.parent-dashboard .form-select,
+.parent-children .form-select,
+.parent-feedback .form-select,
+.parent-menus .form-select,
+.parent-notifications .form-select,
+.parent-nutrition .form-select,
+.parent-dashboard .form-textarea,
+.parent-children .form-textarea,
+.parent-feedback .form-textarea,
+.parent-menus .form-textarea,
+.parent-notifications .form-textarea,
+.parent-nutrition .form-textarea {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-normal);
+  box-sizing: border-box;
+}
+
+.parent-dashboard .form-input:focus,
+.parent-children .form-input:focus,
+.parent-feedback .form-input:focus,
+.parent-menus .form-input:focus,
+.parent-notifications .form-input:focus,
+.parent-nutrition .form-input:focus,
+.parent-dashboard .form-select:focus,
+.parent-children .form-select:focus,
+.parent-feedback .form-select:focus,
+.parent-menus .form-select:focus,
+.parent-notifications .form-select:focus,
+.parent-nutrition .form-select:focus,
+.parent-dashboard .form-textarea:focus,
+.parent-children .form-textarea:focus,
+.parent-feedback .form-textarea:focus,
+.parent-menus .form-textarea:focus,
+.parent-notifications .form-textarea:focus,
+.parent-nutrition .form-textarea:focus {
+  outline: none;
+  border-color: var(--parent-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Tables comunes para parent */
+.parent-dashboard .table,
+.parent-children .table,
+.parent-feedback .table,
+.parent-menus .table,
+.parent-notifications .table,
+.parent-nutrition .table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray-200);
+}
+
+.parent-dashboard .table th,
+.parent-children .table th,
+.parent-feedback .table th,
+.parent-menus .table th,
+.parent-notifications .table th,
+.parent-nutrition .table th {
+  background: var(--gray-50);
+  padding: var(--spacing-4);
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.parent-dashboard .table td,
+.parent-children .table td,
+.parent-feedback .table td,
+.parent-menus .table td,
+.parent-notifications .table td,
+.parent-nutrition .table td {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.parent-dashboard .table tr:hover,
+.parent-children .table tr:hover,
+.parent-feedback .table tr:hover,
+.parent-menus .table tr:hover,
+.parent-notifications .table tr:hover,
+.parent-nutrition .table tr:hover {
+  background: var(--gray-50);
+}
+
+/* Badges y etiquetas para parent */
+.parent-dashboard .badge,
+.parent-children .badge,
+.parent-feedback .badge,
+.parent-menus .badge,
+.parent-notifications .badge,
+.parent-nutrition .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.parent-dashboard .badge-primary,
+.parent-children .badge-primary,
+.parent-feedback .badge-primary,
+.parent-menus .badge-primary,
+.parent-notifications .badge-primary,
+.parent-nutrition .badge-primary {
+  background: var(--blue-100);
+  color: var(--blue-700);
+}
+
+.parent-dashboard .badge-success,
+.parent-children .badge-success,
+.parent-feedback .badge-success,
+.parent-menus .badge-success,
+.parent-notifications .badge-success,
+.parent-nutrition .badge-success {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.parent-dashboard .badge-warning,
+.parent-children .badge-warning,
+.parent-feedback .badge-warning,
+.parent-menus .badge-warning,
+.parent-notifications .badge-warning,
+.parent-nutrition .badge-warning {
+  background: var(--orange-100);
+  color: var(--orange-700);
+}
+
+.parent-dashboard .badge-danger,
+.parent-children .badge-danger,
+.parent-feedback .badge-danger,
+.parent-menus .badge-danger,
+.parent-notifications .badge-danger,
+.parent-nutrition .badge-danger {
+  background: var(--red-100);
+  color: var(--red-700);
+}
+
+/* Alert components para parent */
+.parent-dashboard .alert,
+.parent-children .alert,
+.parent-feedback .alert,
+.parent-menus .alert,
+.parent-notifications .alert,
+.parent-nutrition .alert {
+  padding: var(--spacing-4);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-4);
+  border: 1px solid transparent;
+}
+
+.parent-dashboard .alert-info,
+.parent-children .alert-info,
+.parent-feedback .alert-info,
+.parent-menus .alert-info,
+.parent-notifications .alert-info,
+.parent-nutrition .alert-info {
+  background: var(--blue-50);
+  color: var(--blue-700);
+  border-color: var(--blue-200);
+}
+
+.parent-dashboard .alert-success,
+.parent-children .alert-success,
+.parent-feedback .alert-success,
+.parent-menus .alert-success,
+.parent-notifications .alert-success,
+.parent-nutrition .alert-success {
+  background: var(--green-50);
+  color: var(--green-700);
+  border-color: var(--green-200);
+}
+
+.parent-dashboard .alert-warning,
+.parent-children .alert-warning,
+.parent-feedback .alert-warning,
+.parent-menus .alert-warning,
+.parent-notifications .alert-warning,
+.parent-nutrition .alert-warning {
+  background: var(--orange-50);
+  color: var(--orange-700);
+  border-color: var(--orange-200);
+}
+
+.parent-dashboard .alert-danger,
+.parent-children .alert-danger,
+.parent-feedback .alert-danger,
+.parent-menus .alert-danger,
+.parent-notifications .alert-danger,
+.parent-nutrition .alert-danger {
+  background: var(--red-50);
+  color: var(--red-700);
+  border-color: var(--red-200);
+}
+
+/* Loading states para parent */
+.parent-dashboard .loading,
+.parent-children .loading,
+.parent-feedback .loading,
+.parent-menus .loading,
+.parent-notifications .loading,
+.parent-nutrition .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8);
+  color: var(--gray-600);
+}
+
+.parent-dashboard .spinner,
+.parent-children .spinner,
+.parent-feedback .spinner,
+.parent-menus .spinner,
+.parent-notifications .spinner,
+.parent-nutrition .spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--gray-200);
+  border-top: 3px solid var(--parent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: var(--spacing-3);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Media queries globales para parent */
+@media (max-width: 768px) {
+  .parent-dashboard .btn,
+  .parent-children .btn,
+  .parent-feedback .btn,
+  .parent-menus .btn,
+  .parent-notifications .btn,
+  .parent-nutrition .btn {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-sm);
+  }
+  
+  .parent-dashboard .page-header,
+  .parent-children .page-header,
+  .parent-feedback .page-header,
+  .parent-menus .page-header,
+  .parent-notifications .page-header,
+  .parent-nutrition .page-header {
+    padding: var(--spacing-4);
+  }
+  
+  .parent-dashboard .page-title,
+  .parent-children .page-title,
+  .parent-feedback .page-title,
+  .parent-menus .page-title,
+  .parent-notifications .page-title,
+  .parent-nutrition .page-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .parent-dashboard .card,
+  .parent-children .card,
+  .parent-feedback .card,
+  .parent-menus .card,
+  .parent-notifications .card,
+  .parent-nutrition .card {
+    padding: var(--spacing-4);
+  }
+}

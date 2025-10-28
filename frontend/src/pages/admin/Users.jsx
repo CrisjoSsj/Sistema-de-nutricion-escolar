@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/admin/Users.css';
 import { useState } from 'react';
 
 export default function Users() {
@@ -31,10 +32,11 @@ export default function Users() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Gestión de Usuarios</h1>
-        <p className="page-description">Administra todos los usuarios del sistema de nutrición escolar</p>
-      </div>
+      <div className="admin-users">
+        <div className="page-header">
+          <h1 className="page-title">Gestión de Usuarios</h1>
+          <p className="page-description">Administra todos los usuarios del sistema de nutrición escolar</p>
+        </div>
 
       {/* Estadísticas de usuarios */}
       <div className="stats-grid">
@@ -222,6 +224,7 @@ export default function Users() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

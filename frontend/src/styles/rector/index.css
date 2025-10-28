@@ -1,0 +1,588 @@
+/* Módulo CSS para Rector - Importaciones y estilos comunes */
+
+/* Importar todos los archivos CSS específicos de rector */
+@import './Dashboard.css';
+@import './Students.css';
+@import './Parents.css';
+@import './SchoolProfile.css';
+@import './Reports.css';
+@import './Staff.css';
+
+/* ===== ESTILOS COMUNES PARA RECTOR ===== */
+
+/* Clases base para todas las páginas de rector */
+.rector-page {
+  padding: var(--spacing-6);
+  background: var(--gray-50);
+  min-height: 100vh;
+}
+
+.rector-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header común para páginas de rector */
+.rector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+  padding: var(--spacing-4) 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.rector-header h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.rector-header .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+}
+
+.rector-header .breadcrumb-separator {
+  color: var(--gray-400);
+}
+
+/* Estilos comunes de tarjetas */
+.rector-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-5);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-normal);
+}
+
+.rector-card:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.rector-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-3);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.rector-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.rector-card-actions {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+/* Botones comunes de rector */
+.rector-btn {
+  padding: var(--spacing-3) var(--spacing-4);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.rector-btn:hover {
+  transform: translateY(-1px);
+}
+
+.rector-btn.primary {
+  background: var(--primary-600);
+  color: white;
+}
+
+.rector-btn.primary:hover {
+  background: var(--primary-700);
+}
+
+.rector-btn.secondary {
+  background: white;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+}
+
+.rector-btn.secondary:hover {
+  background: var(--gray-50);
+}
+
+.rector-btn.warning {
+  background: var(--warning-600);
+  color: white;
+}
+
+.rector-btn.warning:hover {
+  background: var(--warning-700);
+}
+
+.rector-btn.success {
+  background: var(--success-600);
+  color: white;
+}
+
+.rector-btn.success:hover {
+  background: var(--success-700);
+}
+
+.rector-btn.danger {
+  background: var(--error-600);
+  color: white;
+}
+
+.rector-btn.danger:hover {
+  background: var(--error-700);
+}
+
+.rector-btn.info {
+  background: var(--info-600);
+  color: white;
+}
+
+.rector-btn.info:hover {
+  background: var(--info-700);
+}
+
+.rector-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Tabla común de rector */
+.rector-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+}
+
+.rector-table th {
+  background: var(--gray-50);
+  padding: var(--spacing-4);
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--font-size-sm);
+}
+
+.rector-table td {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+}
+
+.rector-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rector-table tr:hover {
+  background: var(--gray-50);
+}
+
+/* Formularios comunes de rector */
+.rector-form {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+}
+
+.rector-form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.rector-form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+.rector-form-input,
+.rector-form-select,
+.rector-form-textarea {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-normal);
+  font-family: inherit;
+}
+
+.rector-form-input:focus,
+.rector-form-select:focus,
+.rector-form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.rector-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.rector-form-error {
+  color: var(--error-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-1);
+}
+
+.rector-form-help {
+  color: var(--gray-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-1);
+}
+
+/* Alertas y notificaciones */
+.rector-alert {
+  padding: var(--spacing-4);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+}
+
+.rector-alert.success {
+  background: var(--success-50);
+  border: 1px solid var(--success-200);
+  color: var(--success-800);
+}
+
+.rector-alert.warning {
+  background: var(--warning-50);
+  border: 1px solid var(--warning-200);
+  color: var(--warning-800);
+}
+
+.rector-alert.error {
+  background: var(--error-50);
+  border: 1px solid var(--error-200);
+  color: var(--error-800);
+}
+
+.rector-alert.info {
+  background: var(--info-50);
+  border: 1px solid var(--info-200);
+  color: var(--info-800);
+}
+
+.rector-alert-icon {
+  flex-shrink: 0;
+  font-size: var(--font-size-lg);
+}
+
+.rector-alert-content {
+  flex: 1;
+}
+
+.rector-alert-title {
+  font-weight: 600;
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.rector-alert-message {
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+/* Badges y etiquetas */
+.rector-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.rector-badge.primary {
+  background: var(--primary-100);
+  color: var(--primary-700);
+}
+
+.rector-badge.secondary {
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.rector-badge.success {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.rector-badge.warning {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.rector-badge.error {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+.rector-badge.info {
+  background: var(--info-100);
+  color: var(--info-700);
+}
+
+/* Estados de carga */
+.rector-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8);
+  color: var(--gray-500);
+}
+
+.rector-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--gray-200);
+  border-top: 2px solid var(--primary-500);
+  border-radius: 50%;
+  animation: rector-spin 1s linear infinite;
+  margin-right: var(--spacing-2);
+}
+
+@keyframes rector-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estados vacíos */
+.rector-empty {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--gray-500);
+}
+
+.rector-empty-icon {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-4);
+  opacity: 0.5;
+}
+
+.rector-empty-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.rector-empty-message {
+  font-size: var(--font-size-md);
+  margin: 0;
+}
+
+/* Modales comunes */
+.rector-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.rector-modal-content {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.rector-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.rector-modal-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.rector-modal-close {
+  background: none;
+  border: none;
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  color: var(--gray-500);
+  padding: var(--spacing-1);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-normal);
+}
+
+.rector-modal-close:hover {
+  color: var(--gray-700);
+  background: var(--gray-100);
+}
+
+.rector-modal-body {
+  margin-bottom: var(--spacing-6);
+}
+
+.rector-modal-footer {
+  display: flex;
+  gap: var(--spacing-3);
+  justify-content: flex-end;
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--gray-200);
+}
+
+/* Grid layouts responsive */
+.rector-grid {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.rector-grid.cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.rector-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.rector-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.rector-grid.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.rector-grid.auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.rector-grid.auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Utilidades de espaciado */
+.rector-mt-0 { margin-top: 0; }
+.rector-mt-1 { margin-top: var(--spacing-1); }
+.rector-mt-2 { margin-top: var(--spacing-2); }
+.rector-mt-3 { margin-top: var(--spacing-3); }
+.rector-mt-4 { margin-top: var(--spacing-4); }
+.rector-mt-5 { margin-top: var(--spacing-5); }
+.rector-mt-6 { margin-top: var(--spacing-6); }
+
+.rector-mb-0 { margin-bottom: 0; }
+.rector-mb-1 { margin-bottom: var(--spacing-1); }
+.rector-mb-2 { margin-bottom: var(--spacing-2); }
+.rector-mb-3 { margin-bottom: var(--spacing-3); }
+.rector-mb-4 { margin-bottom: var(--spacing-4); }
+.rector-mb-5 { margin-bottom: var(--spacing-5); }
+.rector-mb-6 { margin-bottom: var(--spacing-6); }
+
+/* Utilidades de texto */
+.rector-text-center { text-align: center; }
+.rector-text-left { text-align: left; }
+.rector-text-right { text-align: right; }
+
+.rector-text-xs { font-size: var(--font-size-xs); }
+.rector-text-sm { font-size: var(--font-size-sm); }
+.rector-text-md { font-size: var(--font-size-md); }
+.rector-text-lg { font-size: var(--font-size-lg); }
+.rector-text-xl { font-size: var(--font-size-xl); }
+.rector-text-2xl { font-size: var(--font-size-2xl); }
+
+.rector-font-normal { font-weight: 400; }
+.rector-font-medium { font-weight: 500; }
+.rector-font-semibold { font-weight: 600; }
+.rector-font-bold { font-weight: 700; }
+
+/* Responsive breakpoints para rector */
+@media (max-width: 1024px) {
+  .rector-grid.cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .rector-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rector-page {
+    padding: var(--spacing-4);
+  }
+  
+  .rector-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+  }
+  
+  .rector-grid.cols-2,
+  .rector-grid.cols-3,
+  .rector-grid.cols-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .rector-modal-content {
+    width: 95%;
+    margin: var(--spacing-4);
+  }
+  
+  .rector-modal-footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .rector-page {
+    padding: var(--spacing-3);
+  }
+  
+  .rector-card {
+    padding: var(--spacing-4);
+  }
+  
+  .rector-form {
+    padding: var(--spacing-4);
+  }
+}

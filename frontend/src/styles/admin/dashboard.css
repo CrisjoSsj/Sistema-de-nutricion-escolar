@@ -1,0 +1,257 @@
+/* Estilos específicos para el Dashboard de Admin */
+
+/* ===== DASHBOARD ADMIN ===== */
+
+/* Header de página específico para admin dashboard */
+.admin-dashboard .page-header {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: white;
+  padding: var(--spacing-8) var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-6);
+}
+
+.admin-dashboard .page-title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Grilla de estadísticas principales */
+.admin-dashboard .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.admin-dashboard .stat-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-dashboard .stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-500), var(--secondary-500));
+}
+
+.admin-dashboard .stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgb(0 0 0 / 0.1);
+}
+
+.admin-dashboard .stat-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.admin-dashboard .stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xl);
+  margin-right: var(--spacing-3);
+}
+
+.admin-dashboard .stat-icon.usuarios {
+  background: linear-gradient(135deg, var(--primary-100), var(--primary-200));
+}
+
+.admin-dashboard .stat-icon.escuelas {
+  background: linear-gradient(135deg, var(--secondary-100), var(--secondary-200));
+}
+
+.admin-dashboard .stat-icon.reportes {
+  background: linear-gradient(135deg, var(--warning-100), var(--warning-200));
+}
+
+.admin-dashboard .stat-icon.feedback {
+  background: linear-gradient(135deg, var(--success-100), var(--success-200));
+}
+
+.admin-dashboard .stat-content {
+  text-align: left;
+}
+
+.admin-dashboard .stat-number {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  line-height: 1;
+  margin-bottom: var(--spacing-1);
+}
+
+.admin-dashboard .stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+/* Acciones rápidas */
+.admin-dashboard .quick-actions {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-8);
+}
+
+.admin-dashboard .quick-actions h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.admin-dashboard .actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.admin-dashboard .action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-6);
+  background: var(--gray-50);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--gray-700);
+}
+
+.admin-dashboard .action-btn:hover {
+  background: var(--primary-50);
+  border-color: var(--primary-300);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -3px rgb(0 0 0 / 0.1);
+}
+
+.admin-dashboard .action-icon {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-2);
+}
+
+.admin-dashboard .action-text {
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Actividad reciente */
+.admin-dashboard .recent-activity {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-200);
+}
+
+.admin-dashboard .recent-activity h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.admin-dashboard .activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-dashboard .activity-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.admin-dashboard .activity-item:last-child {
+  border-bottom: none;
+}
+
+.admin-dashboard .activity-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-full);
+  margin-right: var(--spacing-3);
+  font-size: var(--font-size-lg);
+}
+
+.admin-dashboard .activity-icon.user {
+  background: var(--primary-100);
+}
+
+.admin-dashboard .activity-icon.school {
+  background: var(--secondary-100);
+}
+
+.admin-dashboard .activity-icon.menu {
+  background: var(--warning-100);
+}
+
+.admin-dashboard .activity-content {
+  flex: 1;
+}
+
+.admin-dashboard .activity-description {
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+  margin: 0;
+}
+
+.admin-dashboard .activity-time {
+  font-size: var(--font-size-xs);
+  color: var(--gray-500);
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .admin-dashboard .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .admin-dashboard .actions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-dashboard .page-header {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+  
+  .admin-dashboard .page-title {
+    font-size: var(--font-size-2xl);
+  }
+}

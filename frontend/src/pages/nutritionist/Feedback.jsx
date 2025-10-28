@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/nutritionist/Feedback.css';
 import { useState } from 'react';
 
 export default function NutritionistFeedback() {
@@ -139,10 +140,11 @@ export default function NutritionistFeedback() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Feedback Recibido</h1>
-        <p className="page-description">Revisa y responde a los comentarios sobre tus menús</p>
-      </div>
+      <div className="nutritionist-feedback">
+        <div className="page-header">
+          <h1 className="page-title">Feedback Recibido</h1>
+          <p className="page-description">Revisa y responde a los comentarios sobre tus menús</p>
+        </div>
 
       {/* Estadísticas de feedback */}
       <div className="stats-grid">
@@ -399,6 +401,7 @@ export default function NutritionistFeedback() {
             );
           })}
         </div>
+      </div>
       </div>
     </DashboardLayout>
   );

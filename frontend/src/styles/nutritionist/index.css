@@ -1,0 +1,490 @@
+/* Índice de estilos para Nutritionist */
+
+/* Importar todos los módulos CSS de nutritionist */
+@import './Dashboard.css';
+@import './Menus.css';
+@import './Foods.css';
+@import './Nutrition.css';
+@import './Reports.css';
+@import './Feedback.css';
+
+/* Variables específicas para nutritionist (si se necesitan) */
+:root {
+  /* Colores específicos del nutritionist */
+  --nutritionist-primary: var(--success-600);
+  --nutritionist-primary-light: var(--success-100);
+  --nutritionist-primary-dark: var(--success-700);
+  
+  /* Gradientes específicos */
+  --nutritionist-gradient: linear-gradient(135deg, var(--success-500), var(--success-600));
+  --nutritionist-gradient-hover: linear-gradient(135deg, var(--success-600), var(--success-700));
+}
+
+/* Estilos base para todas las páginas de nutritionist */
+.nutritionist-page {
+  min-height: 100vh;
+  background: var(--gray-50);
+  padding: var(--spacing-6);
+}
+
+.nutritionist-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Estilos comunes para headers de página */
+.nutritionist-page-header {
+  background: var(--nutritionist-gradient);
+  color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-6);
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.05);
+}
+
+.nutritionist-page-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.nutritionist-page-subtitle {
+  font-size: var(--font-size-md);
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Estilos comunes para cards */
+.nutritionist-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+/* Estilos comunes para botones */
+.nutritionist-btn-primary {
+  background: var(--nutritionist-primary);
+  color: white;
+  border: none;
+  padding: var(--spacing-3) var(--spacing-5);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-btn-primary:hover {
+  background: var(--nutritionist-primary-dark);
+  transform: translateY(-1px);
+}
+
+.nutritionist-btn-primary:disabled {
+  background: var(--gray-400);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Estilos comunes para botones secundarios */
+.nutritionist-btn-secondary {
+  background: transparent;
+  color: var(--nutritionist-primary);
+  border: 1px solid var(--nutritionist-primary);
+  padding: var(--spacing-3) var(--spacing-5);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-btn-secondary:hover {
+  background: var(--nutritionist-primary-light);
+  color: var(--nutritionist-primary-dark);
+}
+
+/* Estilos de botones globales para nutritionist */
+.nutritionist-dashboard .btn,
+.nutritionist-menus .btn,
+.nutritionist-foods .btn,
+.nutritionist-nutrition .btn,
+.nutritionist-reports .btn,
+.nutritionist-feedback .btn {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border: 1px solid transparent;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.nutritionist-dashboard .btn-primary,
+.nutritionist-menus .btn-primary,
+.nutritionist-foods .btn-primary,
+.nutritionist-nutrition .btn-primary,
+.nutritionist-reports .btn-primary,
+.nutritionist-feedback .btn-primary {
+  background: var(--success-600);
+  color: white;
+  border-color: var(--success-600);
+}
+
+.nutritionist-dashboard .btn-primary:hover,
+.nutritionist-menus .btn-primary:hover,
+.nutritionist-foods .btn-primary:hover,
+.nutritionist-nutrition .btn-primary:hover,
+.nutritionist-reports .btn-primary:hover,
+.nutritionist-feedback .btn-primary:hover {
+  background: var(--success-700);
+  border-color: var(--success-700);
+  transform: translateY(-1px);
+}
+
+.nutritionist-dashboard .btn-secondary,
+.nutritionist-menus .btn-secondary,
+.nutritionist-foods .btn-secondary,
+.nutritionist-nutrition .btn-secondary,
+.nutritionist-reports .btn-secondary,
+.nutritionist-feedback .btn-secondary {
+  background: var(--blue-600);
+  color: white;
+  border-color: var(--blue-600);
+}
+
+.nutritionist-dashboard .btn-secondary:hover,
+.nutritionist-menus .btn-secondary:hover,
+.nutritionist-foods .btn-secondary:hover,
+.nutritionist-nutrition .btn-secondary:hover,
+.nutritionist-reports .btn-secondary:hover,
+.nutritionist-feedback .btn-secondary:hover {
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+  transform: translateY(-1px);
+}
+
+.nutritionist-dashboard .btn-outline,
+.nutritionist-menus .btn-outline,
+.nutritionist-foods .btn-outline,
+.nutritionist-nutrition .btn-outline,
+.nutritionist-reports .btn-outline,
+.nutritionist-feedback .btn-outline {
+  background: transparent;
+  color: var(--gray-700);
+  border-color: var(--gray-300);
+}
+
+.nutritionist-dashboard .btn-outline:hover,
+.nutritionist-menus .btn-outline:hover,
+.nutritionist-foods .btn-outline:hover,
+.nutritionist-nutrition .btn-outline:hover,
+.nutritionist-reports .btn-outline:hover,
+.nutritionist-feedback .btn-outline:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-400);
+  color: var(--gray-900);
+}
+
+/* Botones pequeños */
+.nutritionist-dashboard .btn-sm,
+.nutritionist-menus .btn-sm,
+.nutritionist-foods .btn-sm,
+.nutritionist-nutrition .btn-sm,
+.nutritionist-reports .btn-sm,
+.nutritionist-feedback .btn-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-xs);
+}
+
+/* Botones icono */
+.nutritionist-dashboard .btn-icon,
+.nutritionist-menus .btn-icon,
+.nutritionist-foods .btn-icon,
+.nutritionist-nutrition .btn-icon,
+.nutritionist-reports .btn-icon,
+.nutritionist-feedback .btn-icon {
+  background: transparent;
+  border: none;
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  color: var(--gray-600);
+  font-size: var(--font-size-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.nutritionist-dashboard .btn-icon:hover,
+.nutritionist-menus .btn-icon:hover,
+.nutritionist-foods .btn-icon:hover,
+.nutritionist-nutrition .btn-icon:hover,
+.nutritionist-reports .btn-icon:hover,
+.nutritionist-feedback .btn-icon:hover {
+  background: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.nutritionist-dashboard .btn-icon.edit,
+.nutritionist-menus .btn-icon.edit,
+.nutritionist-foods .btn-icon.edit,
+.nutritionist-nutrition .btn-icon.edit,
+.nutritionist-reports .btn-icon.edit,
+.nutritionist-feedback .btn-icon.edit {
+  color: var(--yellow-600);
+}
+
+.nutritionist-dashboard .btn-icon.view,
+.nutritionist-menus .btn-icon.view,
+.nutritionist-foods .btn-icon.view,
+.nutritionist-nutrition .btn-icon.view,
+.nutritionist-reports .btn-icon.view,
+.nutritionist-feedback .btn-icon.view {
+  color: var(--blue-600);
+}
+
+.nutritionist-dashboard .btn-icon.delete,
+.nutritionist-menus .btn-icon.delete,
+.nutritionist-foods .btn-icon.delete,
+.nutritionist-nutrition .btn-icon.delete,
+.nutritionist-reports .btn-icon.delete,
+.nutritionist-feedback .btn-icon.delete {
+  color: var(--error-600);
+}
+
+/* Estilos comunes para formularios */
+.nutritionist-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+}
+
+.nutritionist-form-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.nutritionist-form-input,
+.nutritionist-form-select,
+.nutritionist-form-textarea {
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  background: white;
+  transition: all var(--transition-normal);
+}
+
+.nutritionist-form-input:focus,
+.nutritionist-form-select:focus,
+.nutritionist-form-textarea:focus {
+  outline: none;
+  border-color: var(--nutritionist-primary);
+  box-shadow: 0 0 0 3px rgb(34 197 94 / 0.1);
+}
+
+.nutritionist-form-textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Estilos comunes para tablas */
+.nutritionist-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
+}
+
+.nutritionist-table th {
+  background: var(--gray-50);
+  padding: var(--spacing-3);
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-table td {
+  padding: var(--spacing-3);
+  border-bottom: 1px solid var(--gray-100);
+  font-size: var(--font-size-sm);
+}
+
+.nutritionist-table tr:last-child td {
+  border-bottom: none;
+}
+
+.nutritionist-table tr:hover {
+  background: var(--gray-50);
+}
+
+/* Estilos comunes para badges/etiquetas */
+.nutritionist-badge {
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.nutritionist-badge.success {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.nutritionist-badge.warning {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.nutritionist-badge.error {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+.nutritionist-badge.info {
+  background: var(--info-100);
+  color: var(--info-700);
+}
+
+/* Estilos para loading states */
+.nutritionist-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8);
+  color: var(--gray-500);
+}
+
+.nutritionist-loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--gray-200);
+  border-top-color: var(--nutritionist-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: var(--spacing-2);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos para estados vacíos */
+.nutritionist-empty-state {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--gray-500);
+}
+
+.nutritionist-empty-icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-4);
+  color: var(--gray-400);
+}
+
+.nutritionist-empty-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.nutritionist-empty-description {
+  font-size: var(--font-size-sm);
+  color: var(--gray-500);
+  margin: 0;
+}
+
+/* Responsive utilities para nutritionist */
+@media (max-width: 1024px) {
+  .nutritionist-page {
+    padding: var(--spacing-4);
+  }
+  
+  .nutritionist-page-header {
+    padding: var(--spacing-5);
+  }
+  
+  .nutritionist-card {
+    padding: var(--spacing-5);
+  }
+}
+
+@media (max-width: 768px) {
+  .nutritionist-page {
+    padding: var(--spacing-3);
+  }
+  
+  .nutritionist-page-header {
+    padding: var(--spacing-4);
+  }
+  
+  .nutritionist-page-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .nutritionist-card {
+    padding: var(--spacing-4);
+  }
+  
+  .nutritionist-table {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .nutritionist-page {
+    padding: var(--spacing-2);
+  }
+  
+  .nutritionist-page-header {
+    padding: var(--spacing-3);
+  }
+  
+  .nutritionist-page-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .nutritionist-card {
+    padding: var(--spacing-3);
+  }
+  
+  .nutritionist-btn-primary,
+  .nutritionist-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

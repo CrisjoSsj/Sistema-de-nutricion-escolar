@@ -1,0 +1,560 @@
+/* Estilos específicos para la página Notifications de Parent */
+
+/* ===== PARENT NOTIFICATIONS ===== */
+
+/* Encabezado de notificaciones */
+.parent-notifications .notifications-header {
+  background: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+  color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-6);
+}
+
+.parent-notifications .notifications-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-4) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.parent-notifications .notifications-description {
+  font-size: var(--font-size-md);
+  margin: 0 0 var(--spacing-4) 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.parent-notifications .notifications-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.parent-notifications .stat-item {
+  text-align: center;
+  padding: var(--spacing-3);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.parent-notifications .stat-number {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.parent-notifications .stat-label {
+  font-size: var(--font-size-sm);
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Controles de filtros */
+.parent-notifications .notifications-controls {
+  background: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-6);
+}
+
+.parent-notifications .controls-row {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.parent-notifications .control-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  min-width: 150px;
+}
+
+.parent-notifications .control-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 0;
+}
+
+.parent-notifications .control-select {
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-normal);
+}
+
+.parent-notifications .control-select:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.parent-notifications .notifications-actions {
+  display: flex;
+  gap: var(--spacing-2);
+  margin-left: auto;
+}
+
+.parent-notifications .btn-mark-all-read {
+  background: var(--blue-600);
+  color: white;
+  border: 1px solid var(--blue-600);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.parent-notifications .btn-mark-all-read:hover {
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+  transform: translateY(-1px);
+}
+
+.parent-notifications .btn-clear-all {
+  background: var(--gray-600);
+  color: white;
+  border: 1px solid var(--gray-600);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.parent-notifications .btn-clear-all:hover {
+  background: var(--gray-700);
+  border-color: var(--gray-700);
+}
+
+/* Lista de notificaciones */
+.parent-notifications .notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.parent-notifications .notification-item {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.parent-notifications .notification-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.parent-notifications .notification-item.unread {
+  border-left: 4px solid var(--blue-500);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.02), rgba(59, 130, 246, 0.05));
+}
+
+.parent-notifications .notification-item.important {
+  border-left: 4px solid var(--red-500);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.02), rgba(239, 68, 68, 0.05));
+}
+
+.parent-notifications .notification-item.info {
+  border-left: 4px solid var(--green-500);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.02), rgba(34, 197, 94, 0.05));
+}
+
+.parent-notifications .notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-4);
+  gap: var(--spacing-4);
+}
+
+.parent-notifications .notification-meta {
+  flex: 1;
+}
+
+.parent-notifications .notification-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0 0 var(--spacing-2) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.parent-notifications .notification-type-icon {
+  font-size: var(--font-size-lg);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-full);
+  flex-shrink: 0;
+}
+
+.parent-notifications .notification-type-icon.menu {
+  background: var(--green-100);
+  color: var(--green-600);
+}
+
+.parent-notifications .notification-type-icon.system {
+  background: var(--blue-100);
+  color: var(--blue-600);
+}
+
+.parent-notifications .notification-type-icon.emergency {
+  background: var(--red-100);
+  color: var(--red-600);
+}
+
+.parent-notifications .notification-type-icon.general {
+  background: var(--gray-100);
+  color: var(--gray-600);
+}
+
+.parent-notifications .notification-time {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.parent-notifications .notification-child {
+  font-size: var(--font-size-sm);
+  color: var(--blue-600);
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.parent-notifications .notification-actions-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-2);
+}
+
+.parent-notifications .notification-priority {
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius-full);
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.parent-notifications .notification-priority.high {
+  background: var(--red-100);
+  color: var(--red-700);
+}
+
+.parent-notifications .notification-priority.medium {
+  background: var(--orange-100);
+  color: var(--orange-700);
+}
+
+.parent-notifications .notification-priority.low {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.parent-notifications .notification-status {
+  font-size: var(--font-size-xs);
+  color: var(--gray-600);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.parent-notifications .notification-status.unread {
+  color: var(--blue-600);
+}
+
+.parent-notifications .notification-content {
+  margin-bottom: var(--spacing-4);
+}
+
+.parent-notifications .notification-message {
+  font-size: var(--font-size-md);
+  color: var(--gray-700);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.parent-notifications .notification-details {
+  margin-top: var(--spacing-3);
+  padding: var(--spacing-3);
+  background: var(--gray-50);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--gray-200);
+}
+
+.parent-notifications .detail-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-1);
+}
+
+.parent-notifications .detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.parent-notifications .detail-label {
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+.parent-notifications .detail-value {
+  color: var(--gray-900);
+}
+
+.parent-notifications .notification-actions {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.parent-notifications .notification-actions .btn {
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  border: 1px solid transparent;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.parent-notifications .notification-actions .btn-primary {
+  background: var(--blue-600);
+  color: white;
+  border-color: var(--blue-600);
+}
+
+.parent-notifications .notification-actions .btn-primary:hover {
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+}
+
+.parent-notifications .notification-actions .btn-secondary {
+  background: var(--green-600);
+  color: white;
+  border-color: var(--green-600);
+}
+
+.parent-notifications .notification-actions .btn-secondary:hover {
+  background: var(--green-700);
+  border-color: var(--green-700);
+}
+
+.parent-notifications .notification-actions .btn-outline {
+  background: transparent;
+  color: var(--gray-700);
+  border-color: var(--gray-300);
+}
+
+.parent-notifications .notification-actions .btn-outline:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-400);
+  color: var(--gray-900);
+}
+
+.parent-notifications .notification-actions .btn-danger {
+  background: var(--red-600);
+  color: white;
+  border-color: var(--red-600);
+}
+
+.parent-notifications .notification-actions .btn-danger:hover {
+  background: var(--red-700);
+  border-color: var(--red-700);
+}
+
+/* Empty state */
+.parent-notifications .empty-state {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--gray-600);
+}
+
+.parent-notifications .empty-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-4);
+  opacity: 0.6;
+}
+
+.parent-notifications .empty-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.parent-notifications .empty-message {
+  font-size: var(--font-size-md);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Paginación */
+.parent-notifications .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-6);
+  padding: var(--spacing-4);
+}
+
+.parent-notifications .pagination-btn {
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  background: white;
+  color: var(--gray-700);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
+}
+
+.parent-notifications .pagination-btn:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-400);
+}
+
+.parent-notifications .pagination-btn.active {
+  background: var(--blue-600);
+  color: white;
+  border-color: var(--blue-600);
+}
+
+.parent-notifications .pagination-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.parent-notifications .pagination-btn.disabled:hover {
+  background: white;
+  border-color: var(--gray-300);
+}
+
+.parent-notifications .pagination-info {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0 var(--spacing-4);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .parent-notifications .notification-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .parent-notifications .notification-actions-header {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: var(--spacing-3);
+  }
+}
+
+@media (max-width: 768px) {
+  .parent-notifications .controls-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .parent-notifications .control-group {
+    min-width: unset;
+  }
+  
+  .parent-notifications .notifications-actions {
+    margin-left: unset;
+    margin-top: var(--spacing-4);
+    justify-content: stretch;
+  }
+  
+  .parent-notifications .notifications-actions .btn-mark-all-read,
+  .parent-notifications .notifications-actions .btn-clear-all {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .parent-notifications .notifications-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .parent-notifications .notification-actions {
+    justify-content: center;
+  }
+  
+  .parent-notifications .pagination {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .parent-notifications .notifications-header {
+    padding: var(--spacing-4);
+  }
+  
+  .parent-notifications .notifications-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .parent-notifications .notifications-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .parent-notifications .notifications-controls {
+    padding: var(--spacing-4);
+  }
+  
+  .parent-notifications .notification-item {
+    padding: var(--spacing-4);
+  }
+  
+  .parent-notifications .notification-actions-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .parent-notifications .notification-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/admin/Menus.css';
 import { useState } from 'react';
 
 export default function Menus() {
@@ -93,10 +94,11 @@ export default function Menus() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Gestión de Menús</h1>
-        <p className="page-description">Administra los menús nutricionales de todas las escuelas</p>
-      </div>
+      <div className="admin-menus">
+        <div className="page-header">
+          <h1 className="page-title">Gestión de Menús</h1>
+          <p className="page-description">Administra los menús nutricionales de todas las escuelas</p>
+        </div>
 
       {/* Estadísticas de menús */}
       <div className="stats-grid">
@@ -413,6 +415,7 @@ export default function Menus() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

@@ -1,5 +1,6 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 import { useState } from 'react';
+import '../../styles/parent/Feedback.css';
 
 export default function ParentFeedback() {
   const [selectedChild, setSelectedChild] = useState('1');
@@ -111,10 +112,11 @@ export default function ParentFeedback() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Enviar Comentarios</h1>
-        <p className="page-description">Comparte tu opinión sobre los menús y servicios</p>
-      </div>
+      <div className="parent-feedback">
+        <div className="page-header">
+          <h1 className="page-title">Enviar Comentarios</h1>
+          <p className="page-description">Comparte tu opinión sobre los menús y servicios</p>
+        </div>
 
       {/* Formulario de feedback */}
       <div className="feedback-form-section">
@@ -371,6 +373,7 @@ export default function ParentFeedback() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

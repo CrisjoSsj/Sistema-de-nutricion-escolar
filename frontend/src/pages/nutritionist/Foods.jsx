@@ -1,4 +1,5 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
+import '../../styles/nutritionist/Foods.css';
 import { useState } from 'react';
 
 export default function NutritionistFoods() {
@@ -176,10 +177,11 @@ export default function NutritionistFoods() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Base de Alimentos</h1>
-        <p className="page-description">Consulta y gestiona la información nutricional de los alimentos</p>
-      </div>
+      <div className="nutritionist-foods">
+        <div className="page-header">
+          <h1 className="page-title">Base de Alimentos</h1>
+          <p className="page-description">Consulta y gestiona la información nutricional de los alimentos</p>
+        </div>
 
       {/* Estadísticas por categoría */}
       <div className="stats-grid">
@@ -552,6 +554,7 @@ export default function NutritionistFoods() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

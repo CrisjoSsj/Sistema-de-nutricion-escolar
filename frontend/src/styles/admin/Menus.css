@@ -1,0 +1,541 @@
+/* Estilos específicos para la gestión de Menús de Admin */
+
+/* ===== MENÚS ADMIN ===== */
+
+/* Header de página específico para menús */
+.admin-menus .page-header {
+  background: linear-gradient(135deg, var(--warning-500), var(--warning-600));
+  color: white;
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-6);
+}
+
+.admin-menus .page-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.admin-menus .page-description {
+  font-size: var(--font-size-md);
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Estadísticas de menús */
+.admin-menus .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.admin-menus .stat-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-4);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  transition: all var(--transition-normal);
+}
+
+.admin-menus .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.admin-menus .stat-icon {
+  font-size: var(--font-size-xl);
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius);
+  background: var(--warning-50);
+  color: var(--warning-600);
+}
+
+.admin-menus .stat-content h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.admin-menus .stat-content p {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin: 0;
+}
+
+/* Controles y filtros */
+.admin-menus .controls-section {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-6);
+}
+
+.admin-menus .controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.admin-menus .controls-header h2 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.admin-menus .view-toggles {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.admin-menus .view-btn {
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  background: white;
+  color: var(--gray-600);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.admin-menus .view-btn.active {
+  background: var(--warning-600);
+  color: white;
+  border-color: var(--warning-600);
+}
+
+.admin-menus .view-btn:hover:not(.active) {
+  background: var(--gray-50);
+}
+
+.admin-menus .filters-row {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: var(--spacing-4);
+  align-items: center;
+}
+
+.admin-menus .week-selector,
+.admin-menus .school-filter {
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
+  background: white;
+  cursor: pointer;
+}
+
+.admin-menus .add-menu-btn {
+  background: var(--warning-600);
+  color: white;
+  border: none;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.admin-menus .add-menu-btn:hover {
+  background: var(--warning-700);
+  transform: translateY(-1px);
+}
+
+/* Vista de calendario */
+.admin-menus .calendar-view {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+}
+
+.admin-menus .calendar-header {
+  background: var(--gray-50);
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-menus .calendar-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.admin-menus .calendar-navigation {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.admin-menus .nav-btn {
+  padding: var(--spacing-2);
+  border: 1px solid var(--gray-300);
+  background: white;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.admin-menus .nav-btn:hover {
+  background: var(--gray-50);
+}
+
+.admin-menus .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.admin-menus .calendar-day-header {
+  padding: var(--spacing-3);
+  background: var(--gray-100);
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.admin-menus .calendar-day {
+  min-height: 120px;
+  border-right: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  padding: var(--spacing-2);
+  position: relative;
+}
+
+.admin-menus .calendar-day:nth-child(7n) {
+  border-right: none;
+}
+
+.admin-menus .calendar-day.other-month {
+  background: var(--gray-50);
+  color: var(--gray-400);
+}
+
+.admin-menus .day-number {
+  font-weight: 600;
+  margin-bottom: var(--spacing-2);
+}
+
+.admin-menus .day-menu {
+  background: var(--warning-100);
+  border: 1px solid var(--warning-300);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-2);
+  margin-bottom: var(--spacing-1);
+  font-size: var(--font-size-xs);
+}
+
+.admin-menus .day-menu.approved {
+  background: var(--success-100);
+  border-color: var(--success-300);
+}
+
+.admin-menus .day-menu.pending {
+  background: var(--warning-100);
+  border-color: var(--warning-300);
+}
+
+.admin-menus .day-menu.rejected {
+  background: var(--error-100);
+  border-color: var(--error-300);
+}
+
+.admin-menus .menu-school {
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-1);
+}
+
+.admin-menus .menu-meals {
+  font-size: var(--font-size-xs);
+  color: var(--gray-600);
+}
+
+/* Vista de lista */
+.admin-menus .list-view {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  border: 1px solid var(--gray-200);
+}
+
+.admin-menus .menu-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-menus .menu-table th {
+  background: var(--gray-50);
+  padding: var(--spacing-4);
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: var(--font-size-sm);
+}
+
+.admin-menus .menu-table td {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+.admin-menus .menu-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-menus .menu-table tr:hover {
+  background: var(--gray-50);
+}
+
+/* Información del menú en la tabla */
+.admin-menus .menu-date {
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-1);
+}
+
+.admin-menus .menu-day {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+}
+
+.admin-menus .school-name {
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-1);
+}
+
+.admin-menus .school-info {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+}
+
+.admin-menus .meals-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-menus .meal-item {
+  margin-bottom: var(--spacing-2);
+  padding: var(--spacing-2);
+  background: var(--gray-50);
+  border-radius: var(--border-radius);
+}
+
+.admin-menus .meal-item:last-child {
+  margin-bottom: 0;
+}
+
+.admin-menus .meal-name {
+  font-weight: 600;
+  color: var(--gray-900);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-1);
+}
+
+.admin-menus .meal-nutrition {
+  font-size: var(--font-size-xs);
+  color: var(--gray-600);
+}
+
+/* Estados de aprobación */
+.admin-menus .status-badge {
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.admin-menus .status-badge.aprobado {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.admin-menus .status-badge.pendiente {
+  background: var(--warning-100);
+  color: var(--warning-700);
+}
+
+.admin-menus .status-badge.rechazado {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+/* Acciones de la tabla */
+.admin-menus .table-actions {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.admin-menus .action-btn {
+  padding: var(--spacing-2);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+}
+
+.admin-menus .action-btn.approve {
+  background: var(--success-100);
+  color: var(--success-700);
+}
+
+.admin-menus .action-btn.approve:hover {
+  background: var(--success-200);
+}
+
+.admin-menus .action-btn.reject {
+  background: var(--error-100);
+  color: var(--error-700);
+}
+
+.admin-menus .action-btn.reject:hover {
+  background: var(--error-200);
+}
+
+.admin-menus .action-btn.edit {
+  background: var(--primary-100);
+  color: var(--primary-700);
+}
+
+.admin-menus .action-btn.edit:hover {
+  background: var(--primary-200);
+}
+
+/* Modal de menú */
+.admin-menus .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.admin-menus .modal-content {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.admin-menus .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.admin-menus .modal-header h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.admin-menus .modal-close {
+  background: none;
+  border: none;
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  color: var(--gray-500);
+  padding: var(--spacing-1);
+}
+
+.admin-menus .modal-close:hover {
+  color: var(--gray-700);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .admin-menus .filters-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-3);
+  }
+  
+  .admin-menus .calendar-day {
+    min-height: 100px;
+  }
+  
+  .admin-menus .menu-table-container {
+    overflow-x: auto;
+  }
+  
+  .admin-menus .menu-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-menus .filters-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-menus .controls-header {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: stretch;
+  }
+  
+  .admin-menus .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-menus .calendar-day {
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  
+  .admin-menus .modal-content {
+    width: 95%;
+    margin: var(--spacing-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-menus .view-toggles {
+    flex-direction: column;
+  }
+  
+  .admin-menus .table-actions {
+    flex-direction: column;
+  }
+}

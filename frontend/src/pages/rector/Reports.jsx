@@ -1,6 +1,7 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 import { useSchool } from '../../context/SchoolContext.jsx';
 import { useState } from 'react';
+import '../../styles/rector/Reports.css';
 
 export default function RectorReports() {
   const { currentSchool } = useSchool();
@@ -146,7 +147,8 @@ export default function RectorReports() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
+      <div className="rector-reports">
+        <div className="page-header">
         <h1 className="page-title">
           📊 Reportes Institucionales
         </h1>
@@ -724,6 +726,7 @@ export default function RectorReports() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }

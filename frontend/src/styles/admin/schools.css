@@ -1,37 +1,37 @@
-/* Estilos específicos para la gestión de Estudiantes de Rector */
+/* Estilos específicos para la gestión de Escuelas de Admin */
 
-/* ===== ESTUDIANTES RECTOR ===== */
+/* ===== ESCUELAS ADMIN ===== */
 
-/* Header de página específico para estudiantes */
-.rector-students .page-header {
-  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+/* Header de página específico para escuelas */
+.admin-schools .page-header {
+  background: linear-gradient(135deg, var(--secondary-500), var(--secondary-600));
   color: white;
   padding: var(--spacing-6);
   border-radius: var(--border-radius-lg);
   margin-bottom: var(--spacing-6);
 }
 
-.rector-students .page-title {
+.admin-schools .page-title {
   font-size: var(--font-size-2xl);
   font-weight: 700;
   margin: 0 0 var(--spacing-2) 0;
 }
 
-.rector-students .page-description {
+.admin-schools .page-description {
   font-size: var(--font-size-md);
   margin: 0;
   opacity: 0.9;
 }
 
-/* Estadísticas de estudiantes */
-.rector-students .stats-grid {
+/* Estadísticas de escuelas */
+.admin-schools .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-4);
   margin-bottom: var(--spacing-6);
 }
 
-.rector-students .stat-card {
+.admin-schools .stat-card {
   background: white;
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-4);
@@ -43,34 +43,34 @@
   transition: all var(--transition-normal);
 }
 
-.rector-students .stat-card:hover {
+.admin-schools .stat-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
 }
 
-.rector-students .stat-icon {
+.admin-schools .stat-icon {
   font-size: var(--font-size-xl);
   padding: var(--spacing-2);
   border-radius: var(--border-radius);
-  background: var(--primary-50);
-  color: var(--primary-600);
+  background: var(--secondary-50);
+  color: var(--secondary-600);
 }
 
-.rector-students .stat-content h3 {
+.admin-schools .stat-content h3 {
   font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--gray-900);
   margin: 0;
 }
 
-.rector-students .stat-content p {
+.admin-schools .stat-content p {
   font-size: var(--font-size-sm);
   color: var(--gray-600);
   margin: 0;
 }
 
 /* Controles y filtros */
-.rector-students .controls-section {
+.admin-schools .controls-section {
   background: white;
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-6);
@@ -79,22 +79,22 @@
   margin-bottom: var(--spacing-6);
 }
 
-.rector-students .controls-header {
+.admin-schools .controls-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: var(--spacing-4);
 }
 
-.rector-students .controls-header h2 {
+.admin-schools .controls-header h2 {
   font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--gray-900);
   margin: 0;
 }
 
-.rector-students .add-student-btn {
-  background: var(--primary-600);
+.admin-schools .add-school-btn {
+  background: var(--secondary-600);
   color: white;
   border: none;
   padding: var(--spacing-3) var(--spacing-4);
@@ -107,23 +107,23 @@
   gap: var(--spacing-2);
 }
 
-.rector-students .add-student-btn:hover {
-  background: var(--primary-700);
+.admin-schools .add-school-btn:hover {
+  background: var(--secondary-700);
   transform: translateY(-1px);
 }
 
-.rector-students .filters-row {
+.admin-schools .filters-row {
   display: grid;
-  grid-template-columns: 1fr auto auto auto;
+  grid-template-columns: 1fr auto auto;
   gap: var(--spacing-4);
   align-items: center;
 }
 
-.rector-students .search-box {
+.admin-schools .search-box {
   position: relative;
 }
 
-.rector-students .search-input {
+.admin-schools .search-input {
   width: 100%;
   padding: var(--spacing-3) var(--spacing-3) var(--spacing-3) var(--spacing-10);
   border: 1px solid var(--gray-300);
@@ -132,13 +132,13 @@
   transition: all var(--transition-normal);
 }
 
-.rector-students .search-input:focus {
+.admin-schools .search-input:focus {
   outline: none;
-  border-color: var(--primary-500);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--secondary-500);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 
-.rector-students .search-icon {
+.admin-schools .search-icon {
   position: absolute;
   left: var(--spacing-3);
   top: 50%;
@@ -146,7 +146,7 @@
   color: var(--gray-400);
 }
 
-.rector-students .filter-select {
+.admin-schools .level-filter {
   padding: var(--spacing-3);
   border: 1px solid var(--gray-300);
   border-radius: var(--border-radius);
@@ -155,14 +155,14 @@
   cursor: pointer;
 }
 
-/* Grid de estudiantes */
-.rector-students .students-grid {
+/* Grid de escuelas */
+.admin-schools .schools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: var(--spacing-6);
 }
 
-.rector-students .student-card {
+.admin-schools .school-card {
   background: white;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
@@ -171,107 +171,117 @@
   transition: all var(--transition-normal);
 }
 
-.rector-students .student-card:hover {
+.admin-schools .school-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px -3px rgb(0 0 0 / 0.1);
 }
 
-.rector-students .student-header {
-  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+.admin-schools .school-header {
+  background: linear-gradient(135deg, var(--secondary-500), var(--secondary-600));
   color: white;
-  padding: var(--spacing-5);
+  padding: var(--spacing-4);
   position: relative;
 }
 
-.rector-students .student-header::after {
+.admin-schools .school-header::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--primary-400);
+  background: var(--secondary-400);
 }
 
-.rector-students .student-avatar {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-3);
-  margin-bottom: var(--spacing-3);
-}
-
-.rector-students .avatar-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--border-radius-full);
-  background: rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-xl);
-}
-
-.rector-students .student-name {
+.admin-schools .school-name {
   font-size: var(--font-size-lg);
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 var(--spacing-1) 0;
 }
 
-.rector-students .student-grade {
+.admin-schools .school-level {
   display: inline-block;
   padding: var(--spacing-1) var(--spacing-3);
   background: rgba(255, 255, 255, 0.2);
   border-radius: var(--border-radius-full);
   font-size: var(--font-size-xs);
   font-weight: 600;
+  text-transform: capitalize;
 }
 
-.rector-students .student-body {
-  padding: var(--spacing-5);
+.admin-schools .school-body {
+  padding: var(--spacing-4);
 }
 
-.rector-students .student-info {
+.admin-schools .school-info {
   margin-bottom: var(--spacing-4);
 }
 
-.rector-students .info-row {
+.admin-schools .info-row {
   display: flex;
   align-items: center;
   margin-bottom: var(--spacing-2);
   font-size: var(--font-size-sm);
 }
 
-.rector-students .info-row:last-child {
+.admin-schools .info-row:last-child {
   margin-bottom: 0;
 }
 
-.rector-students .info-icon {
+.admin-schools .info-icon {
   width: 16px;
   margin-right: var(--spacing-2);
   color: var(--gray-500);
 }
 
-.rector-students .info-label {
+.admin-schools .info-label {
   font-weight: 600;
   color: var(--gray-700);
   margin-right: var(--spacing-2);
-  min-width: 60px;
+  min-width: 80px;
 }
 
-.rector-students .info-value {
+.admin-schools .info-value {
   color: var(--gray-600);
-  flex: 1;
 }
 
-/* Estado del estudiante */
-.rector-students .student-status {
+/* Métricas de la escuela */
+.admin-schools .school-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+  padding: var(--spacing-3);
+  background: var(--gray-50);
+  border-radius: var(--border-radius);
+}
+
+.admin-schools .metric {
+  text-align: center;
+}
+
+.admin-schools .metric-number {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--secondary-600);
+  margin: 0;
+}
+
+.admin-schools .metric-label {
+  font-size: var(--font-size-xs);
+  color: var(--gray-600);
+  margin: 0;
+}
+
+/* Estado de la escuela */
+.admin-schools .school-status {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: var(--spacing-4);
 }
 
-.rector-students .status-badge {
+.admin-schools .status-badge {
   padding: var(--spacing-1) var(--spacing-3);
   border-radius: var(--border-radius-full);
   font-size: var(--font-size-xs);
@@ -279,79 +289,31 @@
   text-transform: capitalize;
 }
 
-.rector-students .status-badge.active {
+.admin-schools .status-badge.activo {
   background: var(--success-100);
   color: var(--success-700);
 }
 
-.rector-students .status-badge.inactive {
+.admin-schools .status-badge.inactivo {
   background: var(--gray-100);
   color: var(--gray-700);
 }
 
-.rector-students .enrollment-date {
+.admin-schools .creation-date {
   font-size: var(--font-size-xs);
   color: var(--gray-500);
-}
-
-/* Alergias y condiciones médicas */
-.rector-students .medical-info {
-  margin-bottom: var(--spacing-4);
-}
-
-.rector-students .medical-section {
-  margin-bottom: var(--spacing-3);
-}
-
-.rector-students .medical-section:last-child {
-  margin-bottom: 0;
-}
-
-.rector-students .medical-title {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: var(--gray-700);
-  margin-bottom: var(--spacing-1);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.rector-students .tags-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-1);
-}
-
-.rector-students .tag {
-  padding: var(--spacing-1) var(--spacing-2);
-  background: var(--error-100);
-  color: var(--error-700);
-  border-radius: var(--border-radius);
-  font-size: var(--font-size-xs);
-  font-weight: 500;
-}
-
-.rector-students .tag.medical {
-  background: var(--warning-100);
-  color: var(--warning-700);
-}
-
-.rector-students .no-conditions {
-  font-size: var(--font-size-xs);
-  color: var(--gray-500);
-  font-style: italic;
 }
 
 /* Acciones de la tarjeta */
-.rector-students .student-actions {
+.admin-schools .school-actions {
   display: flex;
   gap: var(--spacing-2);
-  padding: var(--spacing-4);
+  padding: var(--spacing-3);
   background: var(--gray-50);
   border-top: 1px solid var(--gray-100);
 }
 
-.rector-students .action-btn {
+.admin-schools .action-btn {
   flex: 1;
   padding: var(--spacing-2);
   border: none;
@@ -362,51 +324,36 @@
   font-weight: 600;
 }
 
-.rector-students .action-btn.primary {
-  background: var(--primary-600);
+.admin-schools .action-btn.primary {
+  background: var(--secondary-600);
   color: white;
 }
 
-.rector-students .action-btn.primary:hover {
-  background: var(--primary-700);
+.admin-schools .action-btn.primary:hover {
+  background: var(--secondary-700);
 }
 
-.rector-students .action-btn.secondary {
+.admin-schools .action-btn.secondary {
   background: white;
   color: var(--gray-700);
   border: 1px solid var(--gray-300);
 }
 
-.rector-students .action-btn.secondary:hover {
+.admin-schools .action-btn.secondary:hover {
   background: var(--gray-50);
 }
 
-/* Información de contacto de emergencia */
-.rector-students .emergency-contact {
-  background: var(--warning-50);
-  border: 1px solid var(--warning-200);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-3);
-  margin-bottom: var(--spacing-4);
+.admin-schools .action-btn.danger {
+  background: var(--error-100);
+  color: var(--error-700);
 }
 
-.rector-students .emergency-title {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: var(--warning-700);
-  margin-bottom: var(--spacing-1);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.admin-schools .action-btn.danger:hover {
+  background: var(--error-200);
 }
 
-.rector-students .emergency-info {
-  font-size: var(--font-size-xs);
-  color: var(--warning-800);
-  margin: 0;
-}
-
-/* Modal de estudiante */
-.rector-students .modal-overlay {
+/* Modal de agregar escuela */
+.admin-schools .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -419,7 +366,7 @@
   z-index: 1000;
 }
 
-.rector-students .modal-content {
+.admin-schools .modal-content {
   background: white;
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-6);
@@ -429,21 +376,21 @@
   overflow-y: auto;
 }
 
-.rector-students .modal-header {
+.admin-schools .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: var(--spacing-6);
 }
 
-.rector-students .modal-header h3 {
+.admin-schools .modal-header h3 {
   font-size: var(--font-size-xl);
   font-weight: 600;
   color: var(--gray-900);
   margin: 0;
 }
 
-.rector-students .modal-close {
+.admin-schools .modal-close {
   background: none;
   border: none;
   font-size: var(--font-size-xl);
@@ -452,54 +399,107 @@
   padding: var(--spacing-1);
 }
 
-.rector-students .modal-close:hover {
+.admin-schools .modal-close:hover {
   color: var(--gray-700);
+}
+
+/* Formulario de escuela */
+.admin-schools .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.admin-schools .form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.admin-schools .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.admin-schools .form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+.admin-schools .form-input,
+.admin-schools .form-select,
+.admin-schools .form-textarea {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-normal);
+}
+
+.admin-schools .form-input:focus,
+.admin-schools .form-select:focus,
+.admin-schools .form-textarea:focus {
+  outline: none;
+  border-color: var(--secondary-500);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.admin-schools .form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.admin-schools .form-actions {
+  display: flex;
+  gap: var(--spacing-3);
+  justify-content: flex-end;
 }
 
 /* Responsive design */
 @media (max-width: 1024px) {
-  .rector-students .students-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  .admin-schools .schools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
   
-  .rector-students .filters-row {
-    grid-template-columns: 1fr auto;
+  .admin-schools .filters-row {
+    grid-template-columns: 1fr;
     gap: var(--spacing-3);
   }
 }
 
 @media (max-width: 768px) {
-  .rector-students .students-grid {
+  .admin-schools .schools-grid {
     grid-template-columns: 1fr;
   }
   
-  .rector-students .controls-header {
+  .admin-schools .controls-header {
     flex-direction: column;
     gap: var(--spacing-3);
     align-items: stretch;
   }
   
-  .rector-students .filters-row {
+  .admin-schools .school-metrics {
     grid-template-columns: 1fr;
   }
   
-  .rector-students .modal-content {
+  .admin-schools .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-schools .modal-content {
     width: 95%;
     margin: var(--spacing-4);
   }
 }
 
 @media (max-width: 480px) {
-  .rector-students .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .rector-students .student-actions {
+  .admin-schools .school-actions {
     flex-direction: column;
   }
   
-  .rector-students .student-avatar {
+  .admin-schools .form-actions {
     flex-direction: column;
-    text-align: center;
   }
 }

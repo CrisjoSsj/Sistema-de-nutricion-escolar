@@ -1,5 +1,6 @@
 import DashboardLayout from '../../components/common/DashboardLayout.jsx';
 import { useState } from 'react';
+import '../../styles/parent/Children.css';
 
 export default function ParentChildren() {
   const [selectedChild, setSelectedChild] = useState(null);
@@ -135,10 +136,11 @@ export default function ParentChildren() {
 
   return (
     <DashboardLayout showSchoolHeader={false}>
-      <div className="page-header">
-        <h1 className="page-title">Mis Hijos</h1>
-        <p className="page-description">Gestiona la información y seguimiento de tus hijos</p>
-      </div>
+      <div className="parent-children">
+        <div className="page-header">
+          <h1 className="page-title">Mis Hijos</h1>
+          <p className="page-description">Gestiona la información y seguimiento de tus hijos</p>
+        </div>
 
       {/* Botón para agregar hijo */}
       <div className="page-actions">
@@ -675,6 +677,7 @@ export default function ParentChildren() {
           </div>
         </div>
       )}
+      </div>
     </DashboardLayout>
   );
 }
