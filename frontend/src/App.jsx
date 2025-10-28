@@ -14,7 +14,7 @@ import './styles/enhanced-forms.css';
 // Páginas principales
 import HomePagePublic from './pages/public/home.jsx';
 import LoginPage from './pages/public/LoginPage.jsx';
-import DashboardPage from './pages/DashboardPage.jsx';
+import DashboardPage from './pages/public/DashboardPage.jsx';
 
 // Páginas de roles específicos
 import AdminDashboard from './pages/admin/Dashboard.jsx';
