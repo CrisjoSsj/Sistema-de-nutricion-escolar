@@ -1674,6 +1674,87 @@
   z-index: -1;
 }
 
+/* ===== ACCESIBILIDAD / USABILIDAD: ajustes de tamaños mínimos ===== */
+/* Basado en pautas de usabilidad: objetivos táctiles >= 44x44 px, lectura fácil y contraste */
+
+:root {
+  --accessible-font-size-base: 1rem; /* 16px */
+  --accessible-font-size-lg: 1.125rem; /* 18px */
+  --accessible-line-height: 1.5;
+}
+
+html { font-size: 100%; }
+body { font-size: var(--accessible-font-size-base); line-height: var(--accessible-line-height); }
+
+/* Botones: tamaños mínimos y padding cómodo */
+.btn, .btn-modern, .btn-primary, .btn-outline, .btn-primary-modern, .btn-secondary, .btn-danger {
+  min-height: 44px; /* mínimo táctil */
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: var(--accessible-font-size-base);
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inputs y selects: campos con altura suficiente */
+.input, .form-input, .search-input, .select, .modern-textarea, textarea, input[type="text"], input[type="email"], input[type="password"], select {
+  min-height: 44px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  font-size: var(--accessible-font-size-base);
+}
+
+.textarea, .modern-textarea { min-height: 120px; }
+
+/* Navbar links: ampliar área clicable */
+.nav-link, .private-navbar .nav-link, .brand-link, .mobile-menu-btn {
+  min-height: 44px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  font-size: var(--accessible-font-size-base);
+}
+
+/* User trigger and dropdown items */
+.user-trigger, .dropdown-item {
+  min-height: 44px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: var(--accessible-font-size-base);
+}
+
+/* Table rows and pagination controls: aumentar row-height para legibilidad y target */
+.table td, .table th, .table tbody tr {
+  min-height: 48px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.table-pagination .pagination-btn, .pagination-btn { min-height: 40px; padding: 0.45rem 0.75rem; font-size: var(--accessible-font-size-base); }
+
+/* Formularios: labels visibles y espaciado */
+.field-label, .label { font-size: var(--accessible-font-size-base); line-height: var(--accessible-line-height); }
+.form-field { gap: var(--spacing-3); }
+
+/* Aumentar zona clicable en small icons */
+.icon-bounce, .icon-spin, .nav-icon, .item-icon { padding: 0.4rem; border-radius: 0.4rem; }
+
+/* Mejora de foco (enfoque accesible) */
+button:focus, input:focus, textarea:focus, select:focus, .user-trigger:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 2px;
+}
+
+/* Ajustes responsive: asegurar targets en móviles */
+@media (max-width: 768px) {
+  .btn, .btn-modern, .mobile-menu-btn, .nav-link { min-height: 48px; padding-left: 1rem; padding-right: 1rem; }
+  .input, .form-input { min-height: 48px; }
+}
+
+
 
 /* ===== MODALES DE CONFIRMACIÓN ===== */
 
