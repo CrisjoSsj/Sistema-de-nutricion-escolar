@@ -4205,10 +4205,12 @@
 }
 
 .header-actions {
+  /* Alineación por defecto en fila para coincidir con header-content */
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: center;
   gap: var(--spacing-3);
+  margin-left: auto; /* empuja acciones al extremo derecho del header */
 }
 
 .user-role-badge,
